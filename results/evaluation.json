@@ -1,0 +1,1366 @@
+{
+  "synthetic": {
+    "inclusionai/ling-3.0-flash / minimal": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.245,
+        "some_college": 0.2013,
+        "bachelors": 0.2863,
+        "masters": 0.1575,
+        "phd": 0.11
+      },
+      "education_tvd": 0.1758,
+      "median_income_by_education": {
+        "high_school": 35000.0,
+        "some_college": 38000.0,
+        "bachelors": 68000.0,
+        "masters": 89000.0,
+        "phd": 112000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.2763,
+        "some_college": 0.2836,
+        "bachelors": 0.1525,
+        "masters": 0.0698,
+        "phd": 0.0545
+      },
+      "median_income_mare": 0.1673,
+      "gender_split": {
+        "male": 0.5062,
+        "female": 0.4938
+      },
+      "unemployment_by_education": {
+        "high_school": 0.4286,
+        "some_college": 0.1118,
+        "bachelors": 0.1004,
+        "masters": 0.1032,
+        "phd": 0.0455
+      },
+      "unemployment_rel_error": {
+        "high_school": 9.2048,
+        "some_college": 2.3879,
+        "bachelors": 3.016,
+        "masters": 3.6909,
+        "phd": 2.7917
+      },
+      "unemployment_mare": 4.2183,
+      "age_mean": 44.29,
+      "age_std": 15.23,
+      "age_ks_stat": 0.1934,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.0906,
+      "income_ks_pvalue": 3.7e-05,
+      "mincer": {
+        "n_employed": 658,
+        "intercept": 8.1834,
+        "return_to_education": 0.1481,
+        "return_se": 0.0027,
+        "experience": 0.0481,
+        "experience_sq": -0.000899,
+        "r_squared": 0.8597
+      },
+      "mincer_return_vs_canonical": 0.6456,
+      "employment_rate": 0.8225,
+      "employment_rate_rel_error": 0.3056,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.0,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9275,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.559,
+        "marital_status": 1.294,
+        "state": 3.106
+      }
+    },
+    "inclusionai/ling-3.0-flash / priors": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.2575,
+        "some_college": 0.2087,
+        "bachelors": 0.2625,
+        "masters": 0.1613,
+        "phd": 0.11
+      },
+      "education_tvd": 0.1557,
+      "median_income_by_education": {
+        "high_school": 31500.0,
+        "some_college": 49000.0,
+        "bachelors": 81000.0,
+        "masters": 97000.0,
+        "phd": 121000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.3486,
+        "some_college": 0.0762,
+        "bachelors": 0.0095,
+        "masters": 0.0138,
+        "phd": 0.0215
+      },
+      "median_income_mare": 0.0939,
+      "gender_split": {
+        "male": 0.5012,
+        "female": 0.4988
+      },
+      "unemployment_by_education": {
+        "high_school": 0.4272,
+        "some_college": 0.1916,
+        "bachelors": 0.1333,
+        "masters": 0.1008,
+        "phd": 0.0909
+      },
+      "unemployment_rel_error": {
+        "high_school": 9.1714,
+        "some_college": 4.8061,
+        "bachelors": 4.332,
+        "masters": 3.5818,
+        "phd": 6.575
+      },
+      "unemployment_mare": 5.6933,
+      "age_mean": 44.48,
+      "age_std": 15.36,
+      "age_ks_stat": 0.1934,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.1821,
+      "income_ks_pvalue": 0.0,
+      "mincer": {
+        "n_employed": 631,
+        "intercept": 8.3608,
+        "return_to_education": 0.1421,
+        "return_se": 0.0026,
+        "experience": 0.0534,
+        "experience_sq": -0.001135,
+        "r_squared": 0.8826
+      },
+      "mincer_return_vs_canonical": 0.5789,
+      "employment_rate": 0.7887,
+      "employment_rate_rel_error": 0.252,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.8817,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9075,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.565,
+        "marital_status": 1.248,
+        "state": 3.086
+      }
+    },
+    "inclusionai/ling-3.0-flash / structural": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.225,
+        "some_college": 0.1875,
+        "bachelors": 0.3113,
+        "masters": 0.1638,
+        "phd": 0.1125
+      },
+      "education_tvd": 0.2095,
+      "median_income_by_education": {
+        "high_school": 22000.0,
+        "some_college": 38000.0,
+        "bachelors": 72000.0,
+        "masters": 92000.0,
+        "phd": 122500.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.5451,
+        "some_college": 0.2836,
+        "bachelors": 0.1026,
+        "masters": 0.0385,
+        "phd": 0.0341
+      },
+      "median_income_mare": 0.2008,
+      "gender_split": {
+        "male": 0.5112,
+        "female": 0.4888
+      },
+      "unemployment_by_education": {
+        "high_school": 0.5556,
+        "some_college": 0.1867,
+        "bachelors": 0.1566,
+        "masters": 0.1832,
+        "phd": 0.0667
+      },
+      "unemployment_rel_error": {
+        "high_school": 12.2286,
+        "some_college": 4.6576,
+        "bachelors": 5.264,
+        "masters": 7.3273,
+        "phd": 4.5583
+      },
+      "unemployment_mare": 6.8072,
+      "age_mean": 44.24,
+      "age_std": 15.89,
+      "age_ks_stat": 0.187,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.1274,
+      "income_ks_pvalue": 0.0,
+      "mincer": {
+        "n_employed": 603,
+        "intercept": 8.0113,
+        "return_to_education": 0.1459,
+        "return_se": 0.0033,
+        "experience": 0.0772,
+        "experience_sq": -0.001646,
+        "r_squared": 0.8865
+      },
+      "mincer_return_vs_canonical": 0.6211,
+      "employment_rate": 0.7538,
+      "employment_rate_rel_error": 0.1964,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.8629,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9175,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.555,
+        "marital_status": 1.274,
+        "state": 3.105
+      }
+    },
+    "qwen/qwen3.7-flash / minimal": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.2412,
+        "some_college": 0.195,
+        "bachelors": 0.3063,
+        "masters": 0.1562,
+        "phd": 0.1013
+      },
+      "education_tvd": 0.1858,
+      "median_income_by_education": {
+        "high_school": 38000.0,
+        "some_college": 32000.0,
+        "bachelors": 65000.0,
+        "masters": 88000.0,
+        "phd": 112000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.2142,
+        "some_college": 0.3967,
+        "bachelors": 0.1899,
+        "masters": 0.0803,
+        "phd": 0.0545
+      },
+      "median_income_mare": 0.1871,
+      "gender_split": {
+        "male": 0.4925,
+        "female": 0.5075
+      },
+      "unemployment_by_education": {
+        "high_school": 0.4145,
+        "some_college": 0.0897,
+        "bachelors": 0.1592,
+        "masters": 0.144,
+        "phd": 0.0
+      },
+      "unemployment_rel_error": {
+        "high_school": 8.869,
+        "some_college": 1.7182,
+        "bachelors": 5.368,
+        "masters": 5.5455,
+        "phd": 1.0
+      },
+      "unemployment_mare": 4.5001,
+      "age_mean": 42.86,
+      "age_std": 15.87,
+      "age_ks_stat": 0.2113,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.0778,
+      "income_ks_pvalue": 0.000736,
+      "mincer": {
+        "n_employed": 649,
+        "intercept": 8.1641,
+        "return_to_education": 0.1461,
+        "return_se": 0.0025,
+        "experience": 0.0513,
+        "experience_sq": -0.000896,
+        "r_squared": 0.9021
+      },
+      "mincer_return_vs_canonical": 0.6233,
+      "employment_rate": 0.8113,
+      "employment_rate_rel_error": 0.2877,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.0066,
+      "consistency_income_monotone_in_education": false,
+      "unique_records_ratio": 0.895,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.546,
+        "marital_status": 1.2,
+        "state": 3.165
+      }
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.2775,
+        "some_college": 0.2062,
+        "bachelors": 0.2587,
+        "masters": 0.1512,
+        "phd": 0.1062
+      },
+      "education_tvd": 0.1382,
+      "median_income_by_education": {
+        "high_school": 35000.0,
+        "some_college": 48000.0,
+        "bachelors": 78000.0,
+        "masters": 98000.0,
+        "phd": 125000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.2763,
+        "some_college": 0.095,
+        "bachelors": 0.0279,
+        "masters": 0.0242,
+        "phd": 0.0552
+      },
+      "median_income_mare": 0.0957,
+      "gender_split": {
+        "male": 0.4925,
+        "female": 0.5075
+      },
+      "unemployment_by_education": {
+        "high_school": 0.3243,
+        "some_college": 0.2,
+        "bachelors": 0.1256,
+        "masters": 0.0496,
+        "phd": 0.0235
+      },
+      "unemployment_rel_error": {
+        "high_school": 6.7214,
+        "some_college": 5.0606,
+        "bachelors": 4.024,
+        "masters": 1.2545,
+        "phd": 0.9583
+      },
+      "unemployment_mare": 3.6038,
+      "age_mean": 41.99,
+      "age_std": 15.88,
+      "age_ks_stat": 0.2228,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.1161,
+      "income_ks_pvalue": 0.0,
+      "mincer": {
+        "n_employed": 661,
+        "intercept": 8.3295,
+        "return_to_education": 0.1456,
+        "return_se": 0.0024,
+        "experience": 0.0487,
+        "experience_sq": -0.000912,
+        "r_squared": 0.8998
+      },
+      "mincer_return_vs_canonical": 0.6178,
+      "employment_rate": 0.8263,
+      "employment_rate_rel_error": 0.3115,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.9928,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.8413,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.555,
+        "marital_status": 1.16,
+        "state": 3.131
+      }
+    },
+    "qwen/qwen3.7-flash / structural": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.2213,
+        "some_college": 0.2,
+        "bachelors": 0.3175,
+        "masters": 0.1562,
+        "phd": 0.105
+      },
+      "education_tvd": 0.2007,
+      "median_income_by_education": {
+        "high_school": 30500.0,
+        "some_college": 32000.0,
+        "bachelors": 72000.0,
+        "masters": 92000.0,
+        "phd": 110000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.3693,
+        "some_college": 0.3967,
+        "bachelors": 0.1026,
+        "masters": 0.0385,
+        "phd": 0.0714
+      },
+      "median_income_mare": 0.1957,
+      "gender_split": {
+        "male": 0.485,
+        "female": 0.515
+      },
+      "unemployment_by_education": {
+        "high_school": 0.4689,
+        "some_college": 0.2,
+        "bachelors": 0.1811,
+        "masters": 0.072,
+        "phd": 0.1548
+      },
+      "unemployment_rel_error": {
+        "high_school": 10.1643,
+        "some_college": 5.0606,
+        "bachelors": 6.244,
+        "masters": 2.2727,
+        "phd": 11.9
+      },
+      "unemployment_mare": 7.1283,
+      "age_mean": 43.1,
+      "age_std": 16.93,
+      "age_ks_stat": 0.1925,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.108,
+      "income_ks_pvalue": 1e-06,
+      "mincer": {
+        "n_employed": 617,
+        "intercept": 8.2696,
+        "return_to_education": 0.1329,
+        "return_se": 0.0031,
+        "experience": 0.0703,
+        "experience_sq": -0.00137,
+        "r_squared": 0.8786
+      },
+      "mincer_return_vs_canonical": 0.4767,
+      "employment_rate": 0.7712,
+      "employment_rate_rel_error": 0.2242,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.9563,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9012,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.547,
+        "marital_status": 1.158,
+        "state": 3.141
+      }
+    },
+    "upstage/solar-pro4 / minimal": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.29,
+        "some_college": 0.2112,
+        "bachelors": 0.2387,
+        "masters": 0.1638,
+        "phd": 0.0963
+      },
+      "education_tvd": 0.1208,
+      "median_income_by_education": {
+        "high_school": 29500.0,
+        "some_college": 38000.0,
+        "bachelors": 62000.0,
+        "masters": 85000.0,
+        "phd": 110000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.39,
+        "some_college": 0.2836,
+        "bachelors": 0.2273,
+        "masters": 0.1116,
+        "phd": 0.0714
+      },
+      "median_income_mare": 0.2168,
+      "gender_split": {
+        "male": 0.4938,
+        "female": 0.5062
+      },
+      "unemployment_by_education": {
+        "high_school": 0.431,
+        "some_college": 0.1716,
+        "bachelors": 0.0419,
+        "masters": 0.1221,
+        "phd": 0.2078
+      },
+      "unemployment_rel_error": {
+        "high_school": 9.2619,
+        "some_college": 4.2,
+        "bachelors": 0.676,
+        "masters": 4.55,
+        "phd": 16.3167
+      },
+      "unemployment_mare": 7.0009,
+      "age_mean": 42.55,
+      "age_std": 16.82,
+      "age_ks_stat": 0.2178,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.0629,
+      "income_ks_pvalue": 0.012905,
+      "mincer": {
+        "n_employed": 631,
+        "intercept": 8.1806,
+        "return_to_education": 0.1458,
+        "return_se": 0.0035,
+        "experience": 0.0478,
+        "experience_sq": -0.000895,
+        "r_squared": 0.8276
+      },
+      "mincer_return_vs_canonical": 0.62,
+      "employment_rate": 0.7887,
+      "employment_rate_rel_error": 0.252,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 0.9941,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.3728,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9513,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.551,
+        "marital_status": 1.269,
+        "state": 3.119
+      }
+    },
+    "upstage/solar-pro4 / priors": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.3088,
+        "some_college": 0.2125,
+        "bachelors": 0.2313,
+        "masters": 0.1525,
+        "phd": 0.095
+      },
+      "education_tvd": 0.1045,
+      "median_income_by_education": {
+        "high_school": 42000.0,
+        "some_college": 50000.0,
+        "bachelors": 78000.0,
+        "masters": 98000.0,
+        "phd": 120000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.1315,
+        "some_college": 0.0573,
+        "bachelors": 0.0279,
+        "masters": 0.0242,
+        "phd": 0.013
+      },
+      "median_income_mare": 0.0508,
+      "gender_split": {
+        "male": 0.495,
+        "female": 0.505
+      },
+      "unemployment_by_education": {
+        "high_school": 0.498,
+        "some_college": 0.1824,
+        "bachelors": 0.0973,
+        "masters": 0.1066,
+        "phd": 0.2237
+      },
+      "unemployment_rel_error": {
+        "high_school": 10.8571,
+        "some_college": 4.5273,
+        "bachelors": 2.892,
+        "masters": 3.8455,
+        "phd": 17.6417
+      },
+      "unemployment_mare": 7.9527,
+      "age_mean": 42.4,
+      "age_std": 16.17,
+      "age_ks_stat": 0.2328,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.1413,
+      "income_ks_pvalue": 0.0,
+      "mincer": {
+        "n_employed": 598,
+        "intercept": 8.7411,
+        "return_to_education": 0.1352,
+        "return_se": 0.0024,
+        "experience": 0.029,
+        "experience_sq": -0.000593,
+        "r_squared": 0.8672
+      },
+      "mincer_return_vs_canonical": 0.5022,
+      "employment_rate": 0.7475,
+      "employment_rate_rel_error": 0.1865,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 1.0,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9325,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.541,
+        "marital_status": 1.193,
+        "state": 3.123
+      }
+    },
+    "upstage/solar-pro4 / structural": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.26,
+        "some_college": 0.1975,
+        "bachelors": 0.29,
+        "masters": 0.165,
+        "phd": 0.0875
+      },
+      "education_tvd": 0.1645,
+      "median_income_by_education": {
+        "high_school": 35000.0,
+        "some_college": 35000.0,
+        "bachelors": 65000.0,
+        "masters": 85000.0,
+        "phd": 110000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.2763,
+        "some_college": 0.3401,
+        "bachelors": 0.1899,
+        "masters": 0.1116,
+        "phd": 0.0714
+      },
+      "median_income_mare": 0.1979,
+      "gender_split": {
+        "male": 0.4963,
+        "female": 0.5038
+      },
+      "unemployment_by_education": {
+        "high_school": 0.6298,
+        "some_college": 0.2975,
+        "bachelors": 0.1552,
+        "masters": 0.1364,
+        "phd": 0.3286
+      },
+      "unemployment_rel_error": {
+        "high_school": 13.9952,
+        "some_college": 8.0152,
+        "bachelors": 5.208,
+        "masters": 5.2,
+        "phd": 26.3833
+      },
+      "unemployment_mare": 11.7603,
+      "age_mean": 43.94,
+      "age_std": 17.3,
+      "age_ks_stat": 0.189,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.1025,
+      "income_ks_pvalue": 2e-05,
+      "mincer": {
+        "n_employed": 545,
+        "intercept": 8.4091,
+        "return_to_education": 0.1337,
+        "return_se": 0.0035,
+        "experience": 0.0484,
+        "experience_sq": -0.000932,
+        "r_squared": 0.8125
+      },
+      "mincer_return_vs_canonical": 0.4856,
+      "employment_rate": 0.6813,
+      "employment_rate_rel_error": 0.0813,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 1.0,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9563,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.54,
+        "marital_status": 1.216,
+        "state": 3.268
+      }
+    },
+    "~deepseek/deepseek-v4-flash-latest / minimal": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.2175,
+        "some_college": 0.22,
+        "bachelors": 0.2762,
+        "masters": 0.1975,
+        "phd": 0.0887
+      },
+      "education_tvd": 0.1845,
+      "median_income_by_education": {
+        "high_school": 33000.0,
+        "some_college": 39000.0,
+        "bachelors": 65000.0,
+        "masters": 88000.0,
+        "phd": 125000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.3176,
+        "some_college": 0.2647,
+        "bachelors": 0.1899,
+        "masters": 0.0803,
+        "phd": 0.0552
+      },
+      "median_income_mare": 0.1815,
+      "gender_split": {
+        "male": 0.4913,
+        "female": 0.5088
+      },
+      "unemployment_by_education": {
+        "high_school": 0.3161,
+        "some_college": 0.2045,
+        "bachelors": 0.1538,
+        "masters": 0.0759,
+        "phd": 0.0141
+      },
+      "unemployment_rel_error": {
+        "high_school": 6.5262,
+        "some_college": 5.197,
+        "bachelors": 5.152,
+        "masters": 2.45,
+        "phd": 0.175
+      },
+      "unemployment_mare": 3.9,
+      "age_mean": 41.52,
+      "age_std": 14.38,
+      "age_ks_stat": 0.258,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.0723,
+      "income_ks_pvalue": 0.001884,
+      "mincer": {
+        "n_employed": 662,
+        "intercept": 8.1944,
+        "return_to_education": 0.1517,
+        "return_se": 0.0026,
+        "experience": 0.0374,
+        "experience_sq": -0.000615,
+        "r_squared": 0.8784
+      },
+      "mincer_return_vs_canonical": 0.6856,
+      "employment_rate": 0.8275,
+      "employment_rate_rel_error": 0.3135,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 0.8188,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.2246,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.985,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.556,
+        "marital_status": 1.163,
+        "state": 3.086
+      }
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.2,
+        "some_college": 0.23,
+        "bachelors": 0.2612,
+        "masters": 0.1913,
+        "phd": 0.1175
+      },
+      "education_tvd": 0.192,
+      "median_income_by_education": {
+        "high_school": 38000.0,
+        "some_college": 45000.0,
+        "bachelors": 70500.0,
+        "masters": 92000.0,
+        "phd": 125000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.2142,
+        "some_college": 0.1516,
+        "bachelors": 0.1213,
+        "masters": 0.0385,
+        "phd": 0.0552
+      },
+      "median_income_mare": 0.1162,
+      "gender_split": {
+        "male": 0.4963,
+        "female": 0.5038
+      },
+      "unemployment_by_education": {
+        "high_school": 0.4688,
+        "some_college": 0.3859,
+        "bachelors": 0.3876,
+        "masters": 0.3464,
+        "phd": 0.2872
+      },
+      "unemployment_rel_error": {
+        "high_school": 10.1619,
+        "some_college": 10.6939,
+        "bachelors": 14.504,
+        "masters": 14.7455,
+        "phd": 22.9333
+      },
+      "unemployment_mare": 14.6077,
+      "age_mean": 41.44,
+      "age_std": 13.33,
+      "age_ks_stat": 0.2759,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.071,
+      "income_ks_pvalue": 0.013261,
+      "mincer": {
+        "n_employed": 493,
+        "intercept": 8.5549,
+        "return_to_education": 0.1334,
+        "return_se": 0.0025,
+        "experience": 0.043,
+        "experience_sq": -0.000847,
+        "r_squared": 0.8903
+      },
+      "mincer_return_vs_canonical": 0.4822,
+      "employment_rate": 0.6162,
+      "employment_rate_rel_error": 0.0218,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 0.3713,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.3616,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9637,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.579,
+        "marital_status": 1.138,
+        "state": 3.212
+      }
+    },
+    "~deepseek/deepseek-v4-flash-latest / structural": {
+      "n_records": 800,
+      "education_distribution": {
+        "high_school": 0.18,
+        "some_college": 0.22,
+        "bachelors": 0.295,
+        "masters": 0.2125,
+        "phd": 0.0925
+      },
+      "education_tvd": 0.222,
+      "median_income_by_education": {
+        "high_school": 31000.0,
+        "some_college": 38000.0,
+        "bachelors": 58000.0,
+        "masters": 78000.0,
+        "phd": 102000.0
+      },
+      "median_income_rel_error": {
+        "high_school": 0.359,
+        "some_college": 0.2836,
+        "bachelors": 0.2771,
+        "masters": 0.1848,
+        "phd": 0.1389
+      },
+      "median_income_mare": 0.2487,
+      "gender_split": {
+        "male": 0.4838,
+        "female": 0.5162
+      },
+      "unemployment_by_education": {
+        "high_school": 0.3403,
+        "some_college": 0.2045,
+        "bachelors": 0.1568,
+        "masters": 0.0824,
+        "phd": 0.0135
+      },
+      "unemployment_rel_error": {
+        "high_school": 7.1024,
+        "some_college": 5.197,
+        "bachelors": 5.272,
+        "masters": 2.7455,
+        "phd": 0.125
+      },
+      "unemployment_mare": 4.0884,
+      "age_mean": 40.58,
+      "age_std": 13.81,
+      "age_ks_stat": 0.269,
+      "age_ks_pvalue": 0.0,
+      "income_ks_stat": 0.085,
+      "income_ks_pvalue": 0.00013,
+      "mincer": {
+        "n_employed": 663,
+        "intercept": 8.3459,
+        "return_to_education": 0.136,
+        "return_se": 0.0023,
+        "experience": 0.045,
+        "experience_sq": -0.000842,
+        "r_squared": 0.8867
+      },
+      "mincer_return_vs_canonical": 0.5111,
+      "employment_rate": 0.8287,
+      "employment_rate_rel_error": 0.3155,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 0.8759,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 0.8686,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 0.9275,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.551,
+        "marital_status": 1.141,
+        "state": 3.122
+      }
+    }
+  },
+  "baselines": {
+    "uniform": {
+      "n_records": 1800,
+      "education_distribution": {
+        "high_school": 0.1939,
+        "some_college": 0.2044,
+        "bachelors": 0.1989,
+        "masters": 0.2011,
+        "phd": 0.2017
+      },
+      "education_tvd": 0.2598,
+      "median_income_by_education": {
+        "high_school": 139950.0,
+        "some_college": 148903.0,
+        "bachelors": 129282.0,
+        "masters": 140602.0,
+        "phd": 131602.0
+      },
+      "median_income_rel_error": {
+        "high_school": 1.8939,
+        "some_college": 1.8074,
+        "bachelors": 0.6113,
+        "masters": 0.4695,
+        "phd": 0.111
+      },
+      "median_income_mare": 0.9786,
+      "gender_split": {
+        "male": 0.5083,
+        "female": 0.4917
+      },
+      "unemployment_by_education": {
+        "high_school": 0.4842,
+        "some_college": 0.5109,
+        "bachelors": 0.5279,
+        "masters": 0.4696,
+        "phd": 0.4876
+      },
+      "unemployment_rel_error": {
+        "high_school": 10.5286,
+        "some_college": 14.4818,
+        "bachelors": 20.116,
+        "masters": 20.3455,
+        "phd": 39.6333
+      },
+      "unemployment_mare": 21.021,
+      "age_mean": 52.02,
+      "age_std": 19.82,
+      "age_ks_stat": 0.029,
+      "age_ks_pvalue": 0.09406,
+      "income_ks_stat": 0.1335,
+      "income_ks_pvalue": 0.0,
+      "mincer": {
+        "n_employed": 907,
+        "intercept": 11.7211,
+        "return_to_education": -0.0099,
+        "return_se": 0.0075,
+        "experience": 0.0029,
+        "experience_sq": -2.7e-05,
+        "r_squared": 0.0039
+      },
+      "mincer_return_vs_canonical": 1.11,
+      "employment_rate": 0.5039,
+      "employment_rate_rel_error": 0.2002,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 1.0,
+      "consistency_income_monotone_in_education": false,
+      "unique_records_ratio": 0.9994,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.609,
+        "marital_status": 1.386,
+        "state": 3.895
+      }
+    },
+    "marginal": {
+      "n_records": 1800,
+      "education_distribution": {
+        "high_school": 0.3517,
+        "some_college": 0.2733,
+        "bachelors": 0.235,
+        "masters": 0.1078,
+        "phd": 0.0322
+      },
+      "education_tvd": 0.0193,
+      "median_income_by_education": {
+        "high_school": 50344.0,
+        "some_college": 53540.0,
+        "bachelors": 80492.0,
+        "masters": 100641.0,
+        "phd": 122874.5
+      },
+      "median_income_rel_error": {
+        "high_school": 0.041,
+        "some_college": 0.0094,
+        "bachelors": 0.0032,
+        "masters": 0.0518,
+        "phd": 0.0373
+      },
+      "median_income_mare": 0.0285,
+      "gender_split": {
+        "male": 0.4922,
+        "female": 0.5078
+      },
+      "unemployment_by_education": {
+        "high_school": 0.0458,
+        "some_college": 0.0203,
+        "bachelors": 0.026,
+        "masters": 0.0052,
+        "phd": 0.0
+      },
+      "unemployment_rel_error": {
+        "high_school": 0.0905,
+        "some_college": 0.3848,
+        "bachelors": 0.04,
+        "masters": 0.7636,
+        "phd": 1.0
+      },
+      "unemployment_mare": 0.4558,
+      "age_mean": 50.73,
+      "age_std": 19.54,
+      "age_ks_stat": 0.0323,
+      "age_ks_pvalue": 0.045603,
+      "income_ks_stat": 0.0224,
+      "income_ks_pvalue": 0.337929,
+      "mincer": {
+        "n_employed": 1749,
+        "intercept": 9.3432,
+        "return_to_education": 0.1167,
+        "return_se": 0.0052,
+        "experience": 0.0023,
+        "experience_sq": -3.6e-05,
+        "r_squared": 0.2288
+      },
+      "mincer_return_vs_canonical": 0.2967,
+      "employment_rate": 0.9717,
+      "employment_rate_rel_error": 0.5423,
+      "consistency_hours_positive_given_employed": 1.0,
+      "consistency_hours_zero_given_unemployed": 1.0,
+      "consistency_income_positive_given_employed": 1.0,
+      "consistency_income_zero_given_unemployed": 1.0,
+      "consistency_income_monotone_in_education": true,
+      "unique_records_ratio": 1.0,
+      "entropy": {
+        "gender": 0.693,
+        "education": 1.413,
+        "marital_status": 1.093,
+        "state": 3.903
+      }
+    }
+  },
+  "bootstrap_ci": {
+    "inclusionai/ling-3.0-flash / minimal": {
+      "mare": [
+        0.1465,
+        0.1665,
+        0.19
+      ],
+      "tvd": [
+        0.1407,
+        0.1758,
+        0.2133
+      ],
+      "mincer_r2": [
+        0.8417,
+        0.861,
+        0.8766
+      ],
+      "mincer_beta1": [
+        0.1424,
+        0.148,
+        0.1529
+      ]
+    },
+    "inclusionai/ling-3.0-flash / priors": {
+      "mare": [
+        0.0843,
+        0.0948,
+        0.1033
+      ],
+      "tvd": [
+        0.1208,
+        0.157,
+        0.1908
+      ],
+      "mincer_r2": [
+        0.8692,
+        0.884,
+        0.8967
+      ],
+      "mincer_beta1": [
+        0.137,
+        0.142,
+        0.1474
+      ]
+    },
+    "inclusionai/ling-3.0-flash / structural": {
+      "mare": [
+        0.1844,
+        0.1988,
+        0.2163
+      ],
+      "tvd": [
+        0.1758,
+        0.2089,
+        0.2408
+      ],
+      "mincer_r2": [
+        0.8668,
+        0.8873,
+        0.9047
+      ],
+      "mincer_beta1": [
+        0.1384,
+        0.146,
+        0.1535
+      ]
+    },
+    "qwen/qwen3.7-flash / minimal": {
+      "mare": [
+        0.159,
+        0.183,
+        0.2127
+      ],
+      "tvd": [
+        0.1508,
+        0.187,
+        0.2195
+      ],
+      "mincer_r2": [
+        0.8908,
+        0.9029,
+        0.9134
+      ],
+      "mincer_beta1": [
+        0.1412,
+        0.1462,
+        0.1515
+      ]
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "mare": [
+        0.0709,
+        0.0987,
+        0.1258
+      ],
+      "tvd": [
+        0.107,
+        0.1383,
+        0.172
+      ],
+      "mincer_r2": [
+        0.8906,
+        0.9006,
+        0.9108
+      ],
+      "mincer_beta1": [
+        0.1404,
+        0.1456,
+        0.1509
+      ]
+    },
+    "qwen/qwen3.7-flash / structural": {
+      "mare": [
+        0.1471,
+        0.192,
+        0.2226
+      ],
+      "tvd": [
+        0.167,
+        0.1995,
+        0.2345
+      ],
+      "mincer_r2": [
+        0.8638,
+        0.8798,
+        0.8945
+      ],
+      "mincer_beta1": [
+        0.1266,
+        0.133,
+        0.1398
+      ]
+    },
+    "upstage/solar-pro4 / minimal": {
+      "mare": [
+        0.2064,
+        0.2217,
+        0.2355
+      ],
+      "tvd": [
+        0.0945,
+        0.1245,
+        0.157
+      ],
+      "mincer_r2": [
+        0.8085,
+        0.8297,
+        0.8468
+      ],
+      "mincer_beta1": [
+        0.1389,
+        0.1459,
+        0.1537
+      ]
+    },
+    "upstage/solar-pro4 / priors": {
+      "mare": [
+        0.0336,
+        0.047,
+        0.0592
+      ],
+      "tvd": [
+        0.0783,
+        0.1083,
+        0.1395
+      ],
+      "mincer_r2": [
+        0.8506,
+        0.8681,
+        0.8845
+      ],
+      "mincer_beta1": [
+        0.1308,
+        0.1351,
+        0.14
+      ]
+    },
+    "upstage/solar-pro4 / structural": {
+      "mare": [
+        0.1709,
+        0.1979,
+        0.2272
+      ],
+      "tvd": [
+        0.1295,
+        0.1645,
+        0.197
+      ],
+      "mincer_r2": [
+        0.7888,
+        0.8145,
+        0.8379
+      ],
+      "mincer_beta1": [
+        0.1266,
+        0.1339,
+        0.1414
+      ]
+    },
+    "~deepseek/deepseek-v4-flash-latest / minimal": {
+      "mare": [
+        0.1556,
+        0.179,
+        0.1994
+      ],
+      "tvd": [
+        0.147,
+        0.1845,
+        0.2182
+      ],
+      "mincer_r2": [
+        0.8567,
+        0.8797,
+        0.8984
+      ],
+      "mincer_beta1": [
+        0.1465,
+        0.1516,
+        0.1571
+      ]
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "mare": [
+        0.0931,
+        0.1124,
+        0.1326
+      ],
+      "tvd": [
+        0.1595,
+        0.1933,
+        0.227
+      ],
+      "mincer_r2": [
+        0.874,
+        0.8912,
+        0.907
+      ],
+      "mincer_beta1": [
+        0.1288,
+        0.1334,
+        0.1382
+      ]
+    },
+    "~deepseek/deepseek-v4-flash-latest / structural": {
+      "mare": [
+        0.2257,
+        0.2479,
+        0.2661
+      ],
+      "tvd": [
+        0.1883,
+        0.222,
+        0.2545
+      ],
+      "mincer_r2": [
+        0.8739,
+        0.8874,
+        0.9007
+      ],
+      "mincer_beta1": [
+        0.1316,
+        0.1359,
+        0.1403
+      ]
+    },
+    "baseline_uniform": {
+      "mare": [
+        0.8862,
+        0.9855,
+        1.0875
+      ],
+      "tvd": [
+        0.2364,
+        0.2598,
+        0.2826
+      ],
+      "mincer_r2": [
+        0.0008,
+        0.0063,
+        0.0191
+      ],
+      "mincer_beta1": [
+        -0.0244,
+        -0.0099,
+        0.0051
+      ]
+    },
+    "baseline_marginal": {
+      "mare": [
+        0.0195,
+        0.0521,
+        0.1116
+      ],
+      "tvd": [
+        0.0093,
+        0.026,
+        0.0463
+      ],
+      "mincer_r2": [
+        0.1963,
+        0.2293,
+        0.2617
+      ],
+      "mincer_beta1": [
+        0.1065,
+        0.1166,
+        0.1261
+      ]
+    }
+  }
+}

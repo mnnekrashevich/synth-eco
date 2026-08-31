@@ -1,0 +1,400 @@
+{
+  "seed_stability": {
+    "inclusionai/ling-3.0-flash / minimal": {
+      "mare_mean": 0.1627,
+      "mare_std": 0.014,
+      "mare_cv": 0.0858,
+      "tvd_mean": 0.1757,
+      "tvd_std": 0.0018,
+      "tvd_cv": 0.0101,
+      "r2_mean": 0.8603,
+      "r2_std": 0.0013,
+      "r2_cv": 0.0016,
+      "beta1_mean": 0.1484,
+      "beta1_std": 0.0023,
+      "beta1_cv": 0.0152,
+      "emp_rate_mean": 0.8225,
+      "emp_rate_std": 0.0,
+      "emp_rate_cv": 0.0,
+      "n_seeds": 2
+    },
+    "inclusionai/ling-3.0-flash / priors": {
+      "mare_mean": 0.0939,
+      "mare_std": 0.0029,
+      "mare_cv": 0.0311,
+      "tvd_mean": 0.1557,
+      "tvd_std": 0.0018,
+      "tvd_cv": 0.0114,
+      "r2_mean": 0.8839,
+      "r2_std": 0.0117,
+      "r2_cv": 0.0133,
+      "beta1_mean": 0.1416,
+      "beta1_std": 0.0046,
+      "beta1_cv": 0.0324,
+      "emp_rate_mean": 0.7888,
+      "emp_rate_std": 0.0018,
+      "emp_rate_cv": 0.0022,
+      "n_seeds": 2
+    },
+    "inclusionai/ling-3.0-flash / structural": {
+      "mare_mean": 0.2028,
+      "mare_std": 0.0102,
+      "mare_cv": 0.0502,
+      "tvd_mean": 0.2095,
+      "tvd_std": 0.0106,
+      "tvd_cv": 0.0506,
+      "r2_mean": 0.8887,
+      "r2_std": 0.0196,
+      "r2_cv": 0.022,
+      "beta1_mean": 0.1459,
+      "beta1_std": 0.0044,
+      "beta1_cv": 0.03,
+      "emp_rate_mean": 0.7538,
+      "emp_rate_std": 0.0088,
+      "emp_rate_cv": 0.0117,
+      "n_seeds": 2
+    },
+    "qwen/qwen3.7-flash / minimal": {
+      "mare_mean": 0.1846,
+      "mare_std": 0.0084,
+      "mare_cv": 0.0455,
+      "tvd_mean": 0.1857,
+      "tvd_std": 0.0018,
+      "tvd_cv": 0.0095,
+      "r2_mean": 0.9032,
+      "r2_std": 0.0129,
+      "r2_cv": 0.0143,
+      "beta1_mean": 0.1461,
+      "beta1_std": 0.0009,
+      "beta1_cv": 0.0063,
+      "emp_rate_mean": 0.8113,
+      "emp_rate_std": 0.0053,
+      "emp_rate_cv": 0.0065,
+      "n_seeds": 2
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "mare_mean": 0.0972,
+      "mare_std": 0.0022,
+      "mare_cv": 0.0221,
+      "tvd_mean": 0.1383,
+      "tvd_std": 0.0088,
+      "tvd_cv": 0.0639,
+      "r2_mean": 0.9002,
+      "r2_std": 0.0052,
+      "r2_cv": 0.0057,
+      "beta1_mean": 0.1457,
+      "beta1_std": 0.0021,
+      "beta1_cv": 0.0141,
+      "emp_rate_mean": 0.8262,
+      "emp_rate_std": 0.0088,
+      "emp_rate_cv": 0.0107,
+      "n_seeds": 2
+    },
+    "qwen/qwen3.7-flash / structural": {
+      "mare_mean": 0.1929,
+      "mare_std": 0.0185,
+      "mare_cv": 0.096,
+      "tvd_mean": 0.2008,
+      "tvd_std": 0.0053,
+      "tvd_cv": 0.0264,
+      "r2_mean": 0.8797,
+      "r2_std": 0.0048,
+      "r2_cv": 0.0055,
+      "beta1_mean": 0.1329,
+      "beta1_std": 0.0091,
+      "beta1_cv": 0.0681,
+      "emp_rate_mean": 0.7712,
+      "emp_rate_std": 0.0088,
+      "emp_rate_cv": 0.0115,
+      "n_seeds": 2
+    },
+    "upstage/solar-pro4 / minimal": {
+      "mare_mean": 0.2201,
+      "mare_std": 0.0076,
+      "mare_cv": 0.0346,
+      "tvd_mean": 0.1208,
+      "tvd_std": 0.0053,
+      "tvd_cv": 0.0439,
+      "r2_mean": 0.8285,
+      "r2_std": 0.0175,
+      "r2_cv": 0.0211,
+      "beta1_mean": 0.1452,
+      "beta1_std": 0.0036,
+      "beta1_cv": 0.0248,
+      "emp_rate_mean": 0.7888,
+      "emp_rate_std": 0.0159,
+      "emp_rate_cv": 0.0202,
+      "n_seeds": 2
+    },
+    "upstage/solar-pro4 / priors": {
+      "mare_mean": 0.0506,
+      "mare_std": 0.0064,
+      "mare_cv": 0.1264,
+      "tvd_mean": 0.1045,
+      "tvd_std": 0.0071,
+      "tvd_cv": 0.0677,
+      "r2_mean": 0.8684,
+      "r2_std": 0.0139,
+      "r2_cv": 0.016,
+      "beta1_mean": 0.1351,
+      "beta1_std": 0.0026,
+      "beta1_cv": 0.0194,
+      "emp_rate_mean": 0.7475,
+      "emp_rate_std": 0.0035,
+      "emp_rate_cv": 0.0047,
+      "n_seeds": 2
+    },
+    "upstage/solar-pro4 / structural": {
+      "mare_mean": 0.2048,
+      "mare_std": 0.0099,
+      "mare_cv": 0.0481,
+      "tvd_mean": 0.1645,
+      "tvd_std": 0.0035,
+      "tvd_cv": 0.0215,
+      "r2_mean": 0.813,
+      "r2_std": 0.0279,
+      "r2_cv": 0.0344,
+      "beta1_mean": 0.1338,
+      "beta1_std": 0.0018,
+      "beta1_cv": 0.0137,
+      "emp_rate_mean": 0.6813,
+      "emp_rate_std": 0.0018,
+      "emp_rate_cv": 0.0026,
+      "n_seeds": 2
+    },
+    "~deepseek/deepseek-v4-flash-latest / minimal": {
+      "mare_mean": 0.182,
+      "mare_std": 0.0045,
+      "mare_cv": 0.0247,
+      "tvd_mean": 0.1845,
+      "tvd_std": 0.0071,
+      "tvd_cv": 0.0383,
+      "r2_mean": 0.8788,
+      "r2_std": 0.0054,
+      "r2_cv": 0.0061,
+      "beta1_mean": 0.152,
+      "beta1_std": 0.0049,
+      "beta1_cv": 0.0321,
+      "emp_rate_mean": 0.8275,
+      "emp_rate_std": 0.0035,
+      "emp_rate_cv": 0.0043,
+      "n_seeds": 2
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "mare_mean": 0.1136,
+      "mare_std": 0.0016,
+      "mare_cv": 0.014,
+      "tvd_mean": 0.192,
+      "tvd_std": 0.0035,
+      "tvd_cv": 0.0184,
+      "r2_mean": 0.8928,
+      "r2_std": 0.0049,
+      "r2_cv": 0.0055,
+      "beta1_mean": 0.1332,
+      "beta1_std": 0.0048,
+      "beta1_cv": 0.0361,
+      "emp_rate_mean": 0.6162,
+      "emp_rate_std": 0.023,
+      "emp_rate_cv": 0.0373,
+      "n_seeds": 2
+    },
+    "~deepseek/deepseek-v4-flash-latest / structural": {
+      "mare_mean": 0.2457,
+      "mare_std": 0.0112,
+      "mare_cv": 0.0457,
+      "tvd_mean": 0.222,
+      "tvd_std": 0.0212,
+      "tvd_cv": 0.0956,
+      "r2_mean": 0.8873,
+      "r2_std": 0.0073,
+      "r2_cv": 0.0082,
+      "beta1_mean": 0.1361,
+      "beta1_std": 0.003,
+      "beta1_cv": 0.0223,
+      "emp_rate_mean": 0.8288,
+      "emp_rate_std": 0.0336,
+      "emp_rate_cv": 0.0405,
+      "n_seeds": 2
+    }
+  },
+  "gender_pay_gap": {
+    "inclusionai/ling-3.0-flash / priors": {
+      "male_median": 78000.0,
+      "female_median": 78000.0,
+      "median_gap_pct": null,
+      "male_mean": 71969.0,
+      "female_mean": 71619.0,
+      "mean_gap_pct": 0.49,
+      "n_male": 318,
+      "n_female": 313
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "male_median": 65000.0,
+      "female_median": 65000.0,
+      "median_gap_pct": null,
+      "male_mean": 69549.0,
+      "female_mean": 68970.0,
+      "mean_gap_pct": 0.83,
+      "n_male": 326,
+      "n_female": 335
+    },
+    "upstage/solar-pro4 / priors": {
+      "male_median": 78000.0,
+      "female_median": 72000.0,
+      "median_gap_pct": 7.69,
+      "male_mean": 74269.0,
+      "female_mean": 68568.0,
+      "mean_gap_pct": 7.68,
+      "n_male": 310,
+      "n_female": 288
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "male_median": 68000.0,
+      "female_median": 62000.0,
+      "median_gap_pct": 8.82,
+      "male_mean": 72678.0,
+      "female_mean": 68198.0,
+      "mean_gap_pct": 6.16,
+      "n_male": 245,
+      "n_female": 248
+    },
+    "BL/uniform": {
+      "male_median": 129792.0,
+      "female_median": 130078.0,
+      "median_gap_pct": -0.22,
+      "n_male": 470,
+      "n_female": 462
+    },
+    "BL/marginal": {
+      "male_median": 62640.0,
+      "female_median": 60776.0,
+      "median_gap_pct": 2.98,
+      "n_male": 827,
+      "n_female": 907
+    },
+    "reference": {
+      "median_gap_pct": 16.0,
+      "note": "BLS 2024 approximate"
+    }
+  },
+  "employment_logistic": {
+    "inclusionai/ling-3.0-flash / priors": {
+      "n": 800,
+      "employment_rate": 0.7887,
+      "edu_coef": -5.680860574282227e+33,
+      "edu_se": 0.0,
+      "edu_odds_ratio": 0.0,
+      "edu_or_ci": [
+        0.0,
+        0.0
+      ],
+      "pseudo_r2": NaN,
+      "converged": true
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "n": 800,
+      "employment_rate": 0.8263,
+      "edu_coef": -1.4197888420770725e+34,
+      "edu_se": 0.0,
+      "edu_odds_ratio": 0.0,
+      "edu_or_ci": [
+        0.0,
+        0.0
+      ],
+      "pseudo_r2": NaN,
+      "converged": true
+    },
+    "upstage/solar-pro4 / priors": {
+      "n": 800,
+      "employment_rate": 0.7475,
+      "edu_coef": -9.35430780343769e+33,
+      "edu_se": 0.0,
+      "edu_odds_ratio": 0.0,
+      "edu_or_ci": [
+        0.0,
+        0.0
+      ],
+      "pseudo_r2": NaN,
+      "converged": true
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "n": 800,
+      "employment_rate": 0.6162,
+      "edu_coef": -2.847267985273076e+33,
+      "edu_se": 0.0,
+      "edu_odds_ratio": 0.0,
+      "edu_or_ci": [
+        0.0,
+        0.0
+      ],
+      "pseudo_r2": NaN,
+      "converged": true
+    },
+    "reference": {
+      "note": "BLS 2024: education strongly predicts employment; OR ~1.3-1.5 per level",
+      "employment_rate": 0.63
+    }
+  },
+  "cross_model_jsd": {
+    "education_jsd": {
+      "inclusionai/ling-3.0-flash vs qwen/qwen3.7-flash": 0.0003,
+      "inclusionai/ling-3.0-flash vs upstage/solar-pro4": 0.002,
+      "inclusionai/ling-3.0-flash vs ~deepseek/deepseek-v4-flash-latest": 0.0028,
+      "qwen/qwen3.7-flash vs upstage/solar-pro4": 0.001,
+      "qwen/qwen3.7-flash vs ~deepseek/deepseek-v4-flash-latest": 0.0048,
+      "upstage/solar-pro4 vs ~deepseek/deepseek-v4-flash-latest": 0.0082
+    },
+    "income_jsd": {
+      "inclusionai/ling-3.0-flash vs qwen/qwen3.7-flash": 0.0341,
+      "inclusionai/ling-3.0-flash vs upstage/solar-pro4": 0.0328,
+      "inclusionai/ling-3.0-flash vs ~deepseek/deepseek-v4-flash-latest": 0.04,
+      "qwen/qwen3.7-flash vs upstage/solar-pro4": 0.0522,
+      "qwen/qwen3.7-flash vs ~deepseek/deepseek-v4-flash-latest": 0.0443,
+      "upstage/solar-pro4 vs ~deepseek/deepseek-v4-flash-latest": 0.0201
+    }
+  },
+  "wasserstein": {
+    "inclusionai/ling-3.0-flash / priors": {
+      "wasserstein_1": 11805.84,
+      "wasserstein_1_normalized": 0.1926,
+      "synthetic_median": 78000.0,
+      "reference_median_approx": 61303.0
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "wasserstein_1": 9513.45,
+      "wasserstein_1_normalized": 0.1569,
+      "synthetic_median": 65000.0,
+      "reference_median_approx": 60625.0
+    },
+    "upstage/solar-pro4 / priors": {
+      "wasserstein_1": 12822.69,
+      "wasserstein_1_normalized": 0.209,
+      "synthetic_median": 75000.0,
+      "reference_median_approx": 61350.0
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "wasserstein_1": 9160.46,
+      "wasserstein_1_normalized": 0.1491,
+      "synthetic_median": 68000.0,
+      "reference_median_approx": 61424.0
+    }
+  },
+  "practical_recipe": {
+    "inclusionai/ling-3.0-flash / priors": {
+      "original_mare": null,
+      "reweighted_mare": 0.0919
+    },
+    "qwen/qwen3.7-flash / priors": {
+      "original_mare": null,
+      "reweighted_mare": 0.0957
+    },
+    "upstage/solar-pro4 / priors": {
+      "original_mare": null,
+      "reweighted_mare": 0.0508
+    },
+    "~deepseek/deepseek-v4-flash-latest / priors": {
+      "original_mare": null,
+      "reweighted_mare": 0.1149
+    }
+  }
+}

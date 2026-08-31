@@ -1,0 +1,35 @@
+{
+  "median_income_by_education": {
+    "high_school": 48360,
+    "some_college": 53040,
+    "bachelors": 80236,
+    "masters": 95680,
+    "phd": 118456
+  },
+  "education_distribution": {
+    "high_school": 0.368,
+    "some_college": 0.254,
+    "bachelors": 0.235,
+    "masters": 0.11,
+    "phd": 0.033
+  },
+  "unemployment_by_education": {
+    "high_school": 0.042,
+    "some_college": 0.033,
+    "bachelors": 0.025,
+    "masters": 0.022,
+    "phd": 0.012
+  },
+  "mincer_return": 0.09,
+  "gender_split": {
+    "male": 0.5,
+    "female": 0.5
+  },
+  "employment_rate": 0.63,
+  "sources": {
+    "median_income": "BLS 2024 median weekly earnings by education (annualized x52)",
+    "education_distribution": "US Census educational attainment 2021/2024 (25+)",
+    "unemployment": "BLS 2024 unemployment rate by education",
+    "mincer_return": "Canonical Mincer (1974) return to schooling ~8-10%"
+  }
+}
