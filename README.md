@@ -1,5 +1,7 @@
 # The Synthetic Economy: Can Small Language Models Generate Research-Grade Economic Microdata?
 
+**Repository:** [https://github.com/mnnekrashevich/synth-eco](https://github.com/mnnekrashevich/synth-eco)
+
 This repository contains the code, data, and paper for the study:
 
 > **The Synthetic Economy: Can Small Language Models Generate Research-Grade Economic Microdata?**
@@ -17,6 +19,7 @@ We investigate whether **small, low-cost language models** (Ling 3.0 Flash, Deep
 - A three-condition prompt ablation (minimal / structural / priors) shows explicit priors improve income fidelity (MARE reduction 40–53%) but have limited effect on econometric utility (R² change < 0.04).
 - Compared with non-LLM baselines, the LLMs' unique value is their **joint structure** (R² ≥ 0.86), not their marginals — a marginal sampler achieves MARE of 2.9% but R² of only 0.23.
 - Cross-seed analysis demonstrates high reproducibility (CV < 3.4% for R²).
+- **The recommended remedy works:** post-stratifying the synthetic records to match the public education distribution drives the education-distribution TVD to zero while preserving the Mincer R² (within ±0.02), validating the generate→validate→calibrate→verify recipe end to end.
 
 ## Repository Structure
 
@@ -32,11 +35,12 @@ synthetic_economy/
 │   ├── generate_data.py   # Generate synthetic microdata (prompt ablation, parallel)
 │   ├── evaluate.py        # Evaluate synthetic data (fidelity, utility, consistency, diversity)
 │   ├── extended_analysis.py # Extended metrics (seed stability, gender gap, JSD, Wasserstein)
+│   ├── calibration_demo.py  # Post-stratification calibration demonstration (recipe validation)
 │   ├── make_figures.py    # Generate publication-quality figures
 │   └── llm_client.py      # OpenRouter LLM client with cost tracking
 ├── data/                  # Synthetic microdata (JSON, 9,600 records)
 ├── results/               # Evaluation results (JSON)
-├── run_all.sh             # Full pipeline: generate → evaluate → figures
+├── run_all.sh             # Full pipeline: generate → evaluate → extended → calibrate → figures
 ├── requirements.txt       # Python dependencies
 └── LICENSE
 ```
@@ -83,7 +87,10 @@ python3 scripts/evaluate.py
 # 4. Extended analysis (seed stability, gender gap, JSD, Wasserstein)
 python3 scripts/extended_analysis.py
 
-# 5. Generate figures
+# 5. Calibration demonstration (post-stratification recipe validation)
+python3 scripts/calibration_demo.py
+
+# 6. Generate figures
 python3 scripts/make_figures.py
 ```
 

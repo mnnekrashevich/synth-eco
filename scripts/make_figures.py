@@ -610,6 +610,72 @@ def fig_gender_gap():
     print("  [OK] gender_gap.png")
 
 
+def fig_calibration():
+    """Bar chart: education TVD and Mincer R^2 before vs after post-stratification.
+
+    Demonstrates the paper's central recommendation: LLM joint structure +
+    marginal calibration. Post-stratification on the education distribution
+    drives TVD to ~0 while preserving the Mincer R^2.
+    """
+    cal_path = os.path.join(RESULTS_DIR, "calibration_demo.json")
+    if not os.path.exists(cal_path):
+        print("  [SKIP] fig_calibration: no calibration_demo.json")
+        return
+    with open(cal_path) as f:
+        cal = json.load(f)
+    if not cal:
+        print("  [SKIP] fig_calibration: empty data")
+        return
+
+    def short(key):
+        model = key.split(" / ")[0]
+        mapping = {
+            "inclusionai/ling-3.0-flash": "Ling",
+            "~deepseek/deepseek-v4-flash-latest": "DeepSeek",
+            "qwen/qwen3.7-flash": "Qwen",
+            "upstage/solar-pro4": "Solar",
+        }
+        return mapping.get(model, model)
+
+    labels = [short(k) for k in cal]
+    tvd_before = [cal[k]["before"]["education_tvd"] for k in cal]
+    tvd_after = [cal[k]["after"]["education_tvd"] for k in cal]
+    r2_before = [cal[k]["before"]["mincer_r2"] for k in cal]
+    r2_after = [cal[k]["after"]["mincer_r2"] for k in cal]
+
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.2))
+    x = np.arange(len(labels))
+    w = 0.38
+
+    ax1.bar(x - w / 2, tvd_before, w, label="Before calibration",
+            color=COLORS["minimal"])
+    ax1.bar(x + w / 2, tvd_after, w, label="After post-stratification",
+            color=COLORS["priors"])
+    ax1.set_xticks(x)
+    ax1.set_xticklabels(labels)
+    ax1.set_ylabel("Education distribution TVD")
+    ax1.set_title("Marginal fidelity: education TVD")
+    ax1.legend()
+
+    ax2.bar(x - w / 2, r2_before, w, label="Before calibration",
+            color=COLORS["minimal"])
+    ax2.bar(x + w / 2, r2_after, w, label="After post-stratification",
+            color=COLORS["priors"])
+    ax2.set_xticks(x)
+    ax2.set_xticklabels(labels)
+    ax2.set_ylabel("Mincer $R^2$")
+    ax2.set_title("Joint structure preserved: Mincer $R^2$")
+    ax2.set_ylim(0, 1.0)
+    ax2.legend()
+
+    fig.suptitle("Post-stratification fixes marginals without destroying joint structure",
+                 y=1.02, fontsize=11, fontweight="bold")
+    fig.tight_layout()
+    fig.savefig(os.path.join(FIG_DIR, "calibration_demo.png"))
+    plt.close(fig)
+    print("  [OK] calibration_demo.png")
+
+
 def main():
     results = _load()
     print("Generating figures...\n")
@@ -623,6 +689,7 @@ def main():
     fig_radar(results)
     fig_seed_stability()
     fig_gender_gap()
+    fig_calibration()
     print(f"\nAll figures written to {FIG_DIR}")
 
 

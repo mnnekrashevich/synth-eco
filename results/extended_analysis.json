@@ -355,28 +355,28 @@
   },
   "wasserstein": {
     "inclusionai/ling-3.0-flash / priors": {
-      "wasserstein_1": 11805.84,
-      "wasserstein_1_normalized": 0.1926,
+      "wasserstein_1": 12097.43,
+      "wasserstein_1_normalized": 0.1964,
       "synthetic_median": 78000.0,
-      "reference_median_approx": 61303.0
+      "reference_median_approx": 61611.0
     },
     "qwen/qwen3.7-flash / priors": {
-      "wasserstein_1": 9513.45,
-      "wasserstein_1_normalized": 0.1569,
+      "wasserstein_1": 8672.71,
+      "wasserstein_1_normalized": 0.1424,
       "synthetic_median": 65000.0,
-      "reference_median_approx": 60625.0
+      "reference_median_approx": 60916.0
     },
     "upstage/solar-pro4 / priors": {
-      "wasserstein_1": 12822.69,
-      "wasserstein_1_normalized": 0.209,
+      "wasserstein_1": 12487.67,
+      "wasserstein_1_normalized": 0.2031,
       "synthetic_median": 75000.0,
-      "reference_median_approx": 61350.0
+      "reference_median_approx": 61474.0
     },
     "~deepseek/deepseek-v4-flash-latest / priors": {
-      "wasserstein_1": 9160.46,
-      "wasserstein_1_normalized": 0.1491,
+      "wasserstein_1": 8846.42,
+      "wasserstein_1_normalized": 0.1429,
       "synthetic_median": 68000.0,
-      "reference_median_approx": 61424.0
+      "reference_median_approx": 61908.0
     }
   },
   "practical_recipe": {

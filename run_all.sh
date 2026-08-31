@@ -56,14 +56,28 @@ fi
 # --- Step 3: Evaluate ---
 echo ""
 echo "============================================"
-echo "  Step 3/4: Evaluate + bootstrap CIs"
+echo "  Step 3/5: Evaluate + bootstrap CIs"
 echo "============================================"
 python3 scripts/evaluate.py
+
+# --- Step 3b: Extended analysis (seed stability, gender gap, JSD, Wasserstein) ---
+echo ""
+echo "============================================"
+echo "  Step 3b/5: Extended analysis"
+echo "============================================"
+python3 scripts/extended_analysis.py
+
+# --- Step 3c: Calibration demonstration (post-stratification recipe) ---
+echo ""
+echo "============================================"
+echo "  Step 3c/5: Calibration demonstration"
+echo "============================================"
+python3 scripts/calibration_demo.py
 
 # --- Step 4: Generate figures ---
 echo ""
 echo "============================================"
-echo "  Step 4/4: Generate figures"
+echo "  Step 4/5: Generate figures"
 echo "============================================"
 python3 scripts/make_figures.py
 
@@ -71,5 +85,7 @@ echo ""
 echo "============================================"
 echo "  DONE"
 echo "  Results:  results/evaluation.json"
+echo "            results/extended_analysis.json"
+echo "            results/calibration_demo.json"
 echo "  Figures:  paper/figures/*.png"
 echo "============================================"

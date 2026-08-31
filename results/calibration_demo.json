@@ -1,0 +1,86 @@
+{
+  "inclusionai/ling-3.0-flash / priors": {
+    "before": {
+      "education_tvd": 0.1557,
+      "employment_rate": 0.7887,
+      "median_income_mare": 0.096,
+      "mincer_r2": 0.8826,
+      "mincer_beta1": 0.1421
+    },
+    "after": {
+      "education_tvd": 0.0,
+      "employment_rate": 0.7487,
+      "median_income_mare": 0.0919,
+      "mincer_r2": 0.8839,
+      "mincer_beta1": 0.1548
+    },
+    "improvement": {
+      "tvd_delta": 0.1557,
+      "emp_rate_delta": 0.04,
+      "r2_delta": 0.0013
+    }
+  },
+  "qwen/qwen3.7-flash / priors": {
+    "before": {
+      "education_tvd": 0.1382,
+      "employment_rate": 0.8263,
+      "median_income_mare": 0.0957,
+      "mincer_r2": 0.8998,
+      "mincer_beta1": 0.1456
+    },
+    "after": {
+      "education_tvd": 0.0,
+      "employment_rate": 0.7941,
+      "median_income_mare": 0.0957,
+      "mincer_r2": 0.9057,
+      "mincer_beta1": 0.1537
+    },
+    "improvement": {
+      "tvd_delta": 0.1382,
+      "emp_rate_delta": 0.0322,
+      "r2_delta": 0.0059
+    }
+  },
+  "upstage/solar-pro4 / priors": {
+    "before": {
+      "education_tvd": 0.1045,
+      "employment_rate": 0.7475,
+      "median_income_mare": 0.0508,
+      "mincer_r2": 0.8672,
+      "mincer_beta1": 0.1352
+    },
+    "after": {
+      "education_tvd": 0.0,
+      "employment_rate": 0.7285,
+      "median_income_mare": 0.0508,
+      "mincer_r2": 0.8542,
+      "mincer_beta1": 0.1459
+    },
+    "improvement": {
+      "tvd_delta": 0.1045,
+      "emp_rate_delta": 0.019,
+      "r2_delta": -0.013
+    }
+  },
+  "~deepseek/deepseek-v4-flash-latest / priors": {
+    "before": {
+      "education_tvd": 0.192,
+      "employment_rate": 0.6162,
+      "median_income_mare": 0.1174,
+      "mincer_r2": 0.8903,
+      "mincer_beta1": 0.1334
+    },
+    "after": {
+      "education_tvd": 0.0,
+      "employment_rate": 0.5908,
+      "median_income_mare": 0.1149,
+      "mincer_r2": 0.8677,
+      "mincer_beta1": 0.1394
+    },
+    "improvement": {
+      "tvd_delta": 0.192,
+      "emp_rate_delta": -0.0254,
+      "r2_delta": -0.0226
+    }
+  }
+}
