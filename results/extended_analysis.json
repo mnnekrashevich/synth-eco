@@ -266,11 +266,11 @@
       "n_female": 462
     },
     "BL/marginal": {
-      "male_median": 62640.0,
-      "female_median": 60776.0,
-      "median_gap_pct": 2.98,
-      "n_male": 827,
-      "n_female": 907
+      "male_median": 62210.0,
+      "female_median": 60406.0,
+      "median_gap_pct": 2.9,
+      "n_male": 812,
+      "n_female": 914
     },
     "reference": {
       "median_gap_pct": 16.0,
@@ -355,28 +355,28 @@
   },
   "wasserstein": {
     "inclusionai/ling-3.0-flash / priors": {
-      "wasserstein_1": 12097.43,
-      "wasserstein_1_normalized": 0.1964,
+      "wasserstein_1": 11940.89,
+      "wasserstein_1_normalized": 0.194,
       "synthetic_median": 78000.0,
-      "reference_median_approx": 61611.0
+      "reference_median_approx": 61566.0
     },
     "qwen/qwen3.7-flash / priors": {
-      "wasserstein_1": 8672.71,
-      "wasserstein_1_normalized": 0.1424,
+      "wasserstein_1": 9438.01,
+      "wasserstein_1_normalized": 0.1541,
       "synthetic_median": 65000.0,
-      "reference_median_approx": 60916.0
+      "reference_median_approx": 61253.0
     },
     "upstage/solar-pro4 / priors": {
-      "wasserstein_1": 12487.67,
-      "wasserstein_1_normalized": 0.2031,
+      "wasserstein_1": 12865.96,
+      "wasserstein_1_normalized": 0.2107,
       "synthetic_median": 75000.0,
-      "reference_median_approx": 61474.0
+      "reference_median_approx": 61055.0
     },
     "~deepseek/deepseek-v4-flash-latest / priors": {
-      "wasserstein_1": 8846.42,
-      "wasserstein_1_normalized": 0.1429,
+      "wasserstein_1": 9131.88,
+      "wasserstein_1_normalized": 0.149,
       "synthetic_median": 68000.0,
-      "reference_median_approx": 61908.0
+      "reference_median_approx": 61298.0
     }
   },
   "practical_recipe": {

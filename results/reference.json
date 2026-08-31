@@ -15,7 +15,7 @@
   },
   "unemployment_by_education": {
     "high_school": 0.042,
-    "some_college": 0.033,
+    "some_college": 0.038,
     "bachelors": 0.025,
     "masters": 0.022,
     "phd": 0.012

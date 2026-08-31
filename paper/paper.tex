@@ -18,9 +18,6 @@
 \sloppy
 
 % ── arXiv metadata ────────────────────────────────────────────────────
-\newcommand{\paperversion}{v3}
-\newcommand{\paperyear}{2026}
-
 \title{The Synthetic Economy:\\
 Can Small Language Models Generate\\
 Research-Grade Economic Microdata?%
@@ -48,10 +45,10 @@ Research-Grade Economic Microdata?%
 Synthetic microdata are increasingly proposed as a privacy-preserving substitute for confidential survey data, yet most generative approaches require substantial compute and access to real training records.
 We investigate whether small, low-cost language models---Ling 3.0 Flash, DeepSeek~V4 Flash, Solar Pro~4, and Qwen~3.7~Flash, priced at under \$0.03 each---can generate research-grade synthetic economic microdata from a text prompt alone, with no fine-tuning and no access to real records.
 Using public aggregated statistics from the U.S.\ Current Population Survey as ground truth, we generate 800 synthetic household records per model per condition (2{,}400 per model) across three prompt conditions (minimal, structural, priors) and evaluate them along four dimensions: statistical fidelity, downstream econometric utility, internal consistency, and diversity.
-We find that the models reproduce conditional economic structure remarkably well---education--income gradients within 4.7--11.6\% mean absolute relative error, Mincer wage regressions with $R^2 = 0.86$--0.90, and near-perfect internal consistency between employment, hours, and income---but systematically distort unconditional marginals, overstating the employment rate (62--83\% vs.\ 63\% reference) and the share of advanced degrees.
-A three-condition prompt ablation isolates the contribution of the models' \emph{latent} economic knowledge from \emph{explicit} priors supplied in the prompt, revealing that explicit priors substantially improve income fidelity (MARE reduction of 40--53\%) while having limited effect on econometric utility ($R^2$ changes $< 0.04$).
-Compared with two non-LLM baselines (uniform and marginal sampling), the LLMs' unique value lies in their joint structure ($R^2 \geq 0.86$), not their marginals---a marginal sampler achieves MARE of 2.9\% but $R^2$ of only 0.23.
-We then demonstrate that the paper's recommended remedy works: a single post-stratification step that reweights records to match the public education distribution drives the education-distribution total variation distance to zero while leaving the Mincer $R^2$ essentially unchanged (within $\pm 0.02$), confirming that the LLMs' joint structure survives marginal calibration.
+We find that the models reproduce conditional economic structure remarkably well---education--income gradients within 5.1--11.6\% mean absolute relative error, Mincer wage regressions with $R^2 = 0.87$--0.90, and near-perfect internal consistency between employment, hours, and income---but systematically distort unconditional marginals, overstating the employment rate (62--83\% vs.\ 63\% reference) and the share of advanced degrees.
+A three-condition prompt ablation isolates the contribution of the models' \emph{latent} economic knowledge from \emph{explicit} priors supplied in the prompt, revealing that explicit priors substantially improve income fidelity (MARE reduction of 36--77\%) while having limited effect on econometric utility ($R^2$ changes $< 0.04$).
+Compared with two non-LLM baselines (uniform and marginal sampling), the LLMs' unique value lies in their joint structure ($R^2 \geq 0.86$), not their marginals---a marginal sampler achieves MARE of 4.0\% but $R^2$ of only 0.23.
+We then demonstrate that the paper's recommended remedy works: a single post-stratification step that reweights records to match the public education distribution drives the education-distribution total variation distance to zero while leaving the Mincer $R^2$ essentially unchanged (within $\pm 0.03$), confirming that the LLMs' joint structure survives marginal calibration.
 Cross-seed analysis demonstrates high reproducibility (coefficient of variation $< 3.4\%$ for $R^2$), and Wasserstein-distance analysis reveals that the synthetic income distributions are within 15--21\% of the reference in normalized earth-mover distance.
 Our results establish that small language models can serve as cheap, zero-shot generators of structurally coherent economic microdata, and that a lightweight, fully public calibration step renders them fit for research use---at a total cost of under \$0.10.
 \end{abstract}
@@ -92,7 +89,7 @@ Our contributions are:
   \item A three-condition prompt ablation (minimal, structural, priors) across all four models that isolates the contribution of the models' \emph{latent} economic knowledge from the \emph{explicit} priors supplied in the prompt.
   \item Cross-seed reproducibility analysis demonstrating that the Mincer $R^2$ is stable across random seeds (coefficient of variation $< 3.4\%$), establishing the reliability of the generation protocol.
   \item Evidence that small LLMs capture \emph{conditional} economic structure (education$\rightarrow$income, employment$\rightarrow$hours) far better than \emph{unconditional} marginals (employment rate, education distribution), identifying precisely where post-hoc correction is needed.
-  \item A concrete demonstration that the recommended remedy works: post-stratifying the synthetic records to match the public education distribution drives the education-distribution TVD to zero while preserving the Mincer $R^2$ (within $\pm 0.02$), validating the proposed generate--validate--calibrate--verify recipe end to end.
+  \item A concrete demonstration that the recommended remedy works: post-stratifying the synthetic records to match the public education distribution drives the education-distribution TVD to zero while preserving the Mincer $R^2$ (within $\pm 0.03$), validating the proposed generate--validate--calibrate--verify recipe end to end.
 \end{enumerate}
 
 The remainder of this paper is organized as follows.
@@ -246,10 +243,18 @@ Low CV indicates that the generation protocol produces stable results regardless
 \subsection{Cross-Model Fidelity Comparison}
 
 Table~\ref{tab:cross_model} presents the headline fidelity metrics for all four models under the \emph{priors} condition, alongside the two baselines.
-Solar Pro 4 achieves the lowest MARE (4.7\%) and TVD (0.108), closely followed by Qwen 3.7 Flash (MARE 9.6\%, TVD 0.138) and Ling 3.0 Flash (MARE 9.4\%, TVD 0.156).
+Solar Pro 4 achieves the lowest MARE (5.1\%) and TVD (0.104), closely followed by Qwen 3.7 Flash (MARE 9.6\%, TVD 0.138) and Ling 3.0 Flash (MARE 9.4\%, TVD 0.156).
 DeepSeek V4 Flash exhibits the highest MARE (11.6\%) but achieves the most accurate employment rate (61.6\% vs.\ 63\% reference, relative error 2.2\%).
-All four LLMs substantially outperform the uniform baseline (MARE 97.9\%) but are outperformed by the marginal baseline on MARE (2.9\%)---a comparison that is central to our interpretation (Section~\ref{sec:baselines}).
+All four LLMs substantially outperform the uniform baseline (MARE 97.9\%) but are outperformed by the marginal baseline on MARE (4.0\%)---a comparison that is central to our interpretation (Section~\ref{sec:baselines}).
 Figure~\ref{fig:radar} summarizes the multi-dimensional comparison across all four models, showing that no single model dominates on every dimension: Solar Pro 4 leads on fidelity and consistency, while Qwen 3.7 Flash leads on econometric utility.
+Figure~\ref{fig:education} visualizes the systematic over-representation of advanced degrees relative to the Census reference---the marginal distortion that motivates the calibration step in Section~\ref{sec:calibration}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\linewidth]{figures/education_distribution.png}
+\caption{Educational attainment: synthetic (priors) vs.\ Census reference and baselines. All four models over-represent advanced degrees (bachelor's and above) relative to the reference.}
+\label{fig:education}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -270,10 +275,10 @@ Figure~\ref{fig:radar} summarizes the multi-dimensional comparison across all fo
 Ling 3.0 Flash     & 9.4\%  & 0.156 & 0.193 & 78.9\% & 90.8\% \\
 DeepSeek V4 Flash  & 11.6\% & 0.192 & 0.149 & 61.6\% & 96.4\% \\
 Qwen 3.7 Flash     & 9.6\%  & 0.138 & 0.157 & 82.6\% & 84.1\% \\
-Solar Pro 4        & \textbf{4.7\%}  & \textbf{0.108} & 0.209 & 74.1\% & 95.1\% \\
+Solar Pro 4        & \textbf{5.1\%}  & \textbf{0.104} & 0.211 & 74.8\% & 93.2\% \\
 \midrule
 Uniform baseline   & 97.9\% & 0.260 & ---   & 50.4\% & 99.9\% \\
-Marginal baseline  & 2.9\%  & 0.019 & ---   & 97.2\% & 100\%  \\
+Marginal baseline  & 4.0\%  & 0.021 & ---   & 96.8\% & 100\%  \\
 \midrule
 \textbf{Reference} & ---    & ---   & ---   & 63.0\% & ---    \\
 \bottomrule
@@ -290,8 +295,8 @@ Marginal baseline  & 2.9\%  & 0.019 & ---   & 97.2\% & 100\%  \\
 \end{figure}
 
 Table~\ref{tab:income} compares synthetic and reference median income by education for the best-performing model (Solar Pro 4, priors condition).
-The model reproduces the education--income gradient with a mean absolute relative error of 4.7\% (95\% CI [3.5\%, 5.3\%]).
-Errors are smallest for bachelor's (1.0\%) and PhD (1.3\%) and largest for high school (13.2\%).
+The model reproduces the education--income gradient with a mean absolute relative error of 5.1\% (95\% bootstrap CI [3.4\%, 5.9\%]).
+Errors are smallest for bachelor's (2.8\%) and PhD (1.3\%) and largest for high school (13.2\%).
 
 \begin{table}[htbp]
 \centering
@@ -304,12 +309,12 @@ Errors are smallest for bachelor's (1.0\%) and PhD (1.3\%) and largest for high 
 \midrule
 High school   & \$42{,}000 & \$48{,}360 & 13.2\% \\
 Some college  & \$50{,}000 & \$53{,}040 & 5.7\%  \\
-Bachelor's    & \$79{,}450 & \$80{,}236 & 1.0\%  \\
+Bachelor's    & \$78{,}000 & \$80{,}236 & 2.8\%  \\
 Master's      & \$98{,}000 & \$95{,}680 & 2.4\%  \\
 PhD           & \$120{,}000 & \$118{,}456 & 1.3\% \\
 \midrule
-\multicolumn{3}{l}{Mean abs.\ relative error} & \textbf{4.7\%} \\
-\multicolumn{3}{l}{95\% bootstrap CI} & {[}3.5\%, 5.3\%{]} \\
+\multicolumn{3}{l}{Mean abs.\ relative error} & \textbf{5.1\%} \\
+\multicolumn{3}{l}{95\% bootstrap CI} & {[}3.4\%, 5.9\%{]} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -325,8 +330,16 @@ PhD           & \$120{,}000 & \$118{,}456 & 1.3\% \\
 \end{figure}
 
 Table~\ref{tab:mincer} reports the Mincer regression results for the priors condition across all four models.
-All models recover a strong, statistically precise education--income relationship ($R^2 = 0.86$--0.90), with concave experience profiles (positive linear, negative quadratic term) consistent with the canonical age--earnings lifecycle.
-However, the estimated returns to education (13.0--14.6\% per year) are systematically above the canonical 8--10\% range, reflecting the models' tendency to compress income differences into the education dimension.
+All models recover a strong, statistically precise education--income relationship ($R^2 = 0.87$--0.90), with concave experience profiles (positive linear, negative quadratic term) consistent with the canonical age--earnings lifecycle.
+Figure~\ref{fig:ageincome} visualizes this concave age--earnings profile directly: mean income rises through mid-career and then declines, matching the canonical lifecycle.
+However, the estimated returns to education (13.3--14.6\% per year) are systematically above the canonical 8--10\% range, reflecting the models' tendency to compress income differences into the education dimension.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.72\linewidth]{figures/age_income.png}
+\caption{Age--income lifecycle profile for employed synthetic records (priors condition), with 95\% confidence bands. The concave profile is consistent with the canonical age--earnings lifecycle.}
+\label{fig:ageincome}
+\end{figure}
 
 \begin{table}[htbp]
 \centering
@@ -340,7 +353,7 @@ However, the estimated returns to education (13.0--14.6\% per year) are systemat
 Ling 3.0 Flash    & 631 & 0.883 & 0.142 & {[}0.137, 0.147{]} \\
 DeepSeek V4 Flash & 493 & 0.890 & 0.133 & {[}0.129, 0.138{]} \\
 Qwen 3.7 Flash    & 661 & 0.900 & 0.146 & {[}0.140, 0.151{]} \\
-Solar Pro 4       & 593 & 0.864 & 0.134 & {[}0.130, 0.139{]} \\
+Solar Pro 4       & 598 & 0.867 & 0.135 & {[}0.131, 0.140{]} \\
 \midrule
 Canonical         & --- & ---   & 0.08--0.10 & --- \\
 \bottomrule
@@ -368,7 +381,7 @@ This is the paper's central empirical claim: \emph{the LLMs' value is their cond
 Ling 3.0 Flash    & 0.883 & 0.142 & {[}0.137, 0.147{]} \\
 DeepSeek V4 Flash & 0.890 & 0.133 & {[}0.129, 0.138{]} \\
 Qwen 3.7 Flash    & 0.900 & 0.146 & {[}0.140, 0.151{]} \\
-Solar Pro 4       & 0.864 & 0.134 & {[}0.130, 0.139{]} \\
+Solar Pro 4       & 0.867 & 0.135 & {[}0.131, 0.140{]} \\
 \midrule
 Uniform baseline  & 0.004 & $-0.010$ & --- \\
 Marginal baseline & 0.229 & 0.117 & --- \\
@@ -390,7 +403,7 @@ Figure~\ref{fig:calibration} and Table~\ref{tab:calibration} report the educatio
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.95\linewidth]{figures/calibration_demo.png}
-\caption{Post-stratification on the public education distribution reduces the education-distribution TVD to zero by construction while preserving the Mincer $R^2$ (changes within $\pm 0.02$). This validates the paper's central recommendation: LLM joint structure plus marginal calibration.}
+\caption{Post-stratification on the public education distribution reduces the education-distribution TVD to zero by construction while preserving the Mincer $R^2$ (changes within $\pm 0.03$). This validates the paper's central recommendation: LLM joint structure plus marginal calibration.}
 \label{fig:calibration}
 \end{figure}
 
@@ -408,12 +421,12 @@ DeepSeek V4 Flash & 0.192 & 0.000 & 0.890 & 0.868 \\
 Qwen 3.7 Flash    & 0.138 & 0.000 & 0.900 & 0.906 \\
 Solar Pro 4       & 0.105 & 0.000 & 0.867 & 0.854 \\
 \midrule
-\textbf{Mean change} & --- & --- & --- & $\pm 0.02$ \\
+\textbf{Mean change} & --- & --- & --- & $\pm 0.03$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The result is decisive: post-stratification drives the education-distribution TVD to zero by construction, yet the Mincer $R^2$ changes by at most 0.02 (and in two of four models \emph{increases}), confirming that the joint structure is preserved under marginal reweighting.
+The result is decisive: post-stratification drives the education-distribution TVD to zero by construction, yet the Mincer $R^2$ changes by at most 0.023 (and in two of four models \emph{increases}), confirming that the joint structure is preserved under marginal reweighting.
 This is the paper's central practical claim made testable: the LLM's contribution (conditional structure) and the calibration step's contribution (unconditional marginals) are complementary and do not interfere.
 We note that employment remains a separate marginal to correct (the weighted employment rate is still elevated relative to the 63\% reference, since we calibrated only education); in practice a practitioner would rake on both marginals simultaneously, which is a straightforward extension of the same procedure.
 
@@ -424,9 +437,9 @@ Table~\ref{tab:ablation} presents the full ablation across all four models and t
 The ablation reveals three key patterns:
 
 \begin{enumerate}[leftmargin=*, itemsep=2pt]
-  \item \textbf{Priors improve income fidelity.} Across all models, moving from \emph{minimal} to \emph{priors} reduces MARE by 40--53\% (e.g., Solar Pro 4: 21.7\% $\to$ 4.7\%; Ling 3.0 Flash: 16.7\% $\to$ 9.4\%).
-  \item \textbf{Priors have limited effect on $R^2$.} The Mincer $R^2$ changes by less than 0.04 across conditions for each model, indicating that the joint structure is largely \emph{latent}---the models already encode the education--income correlation without explicit instruction.
-  \item \textbf{Structural constraints improve consistency but not fidelity.} The \emph{structural} condition consistently improves the consistency metric $P(\text{income}=0 \mid \text{not employed})$ (e.g., Solar Pro 4: 37.3\% $\to$ 100.0\%) but does not reduce MARE and sometimes increases it.
+  \item \textbf{Priors improve income fidelity.} Across all models, moving from \emph{minimal} to \emph{priors} reduces MARE by 36--77\% (e.g., Solar Pro 4: 21.7\% $\to$ 5.1\%; Ling 3.0 Flash: 16.7\% $\to$ 9.4\%).
+  \item \textbf{Priors have limited effect on $R^2$.} Moving from \emph{minimal} to \emph{priors} changes the Mincer $R^2$ by at most 0.04 for each model, indicating that the joint structure is largely \emph{latent}---the models already encode the education--income correlation without explicit instruction.
+  \item \textbf{Structural constraints improve consistency but not fidelity.} The \emph{structural} condition consistently improves the consistency metric $P(\text{income}=0 \mid \text{not employed})$ (e.g., Solar Pro 4: 37.3\% $\to$ 100.0\%) but does not reliably reduce MARE---it increases MARE for three of four models and reduces it only marginally for Solar Pro 4.
 \end{enumerate}
 
 \begin{table}[htbp]
@@ -456,19 +469,36 @@ The ablation reveals three key patterns:
 \multirow{3}{*}{\shortstack[l]{Solar\\Pro 4}}
   & minimal    & 21.7\% & 0.121 & 0.828 & 0.146 \\
   & structural & 19.8\% & 0.165 & 0.812 & 0.134 \\
-  & priors     & \textbf{4.7\%}  & \textbf{0.108} & 0.864 & 0.134 \\
+  & priors     & \textbf{5.1\%}  & \textbf{0.104} & 0.867 & 0.135 \\
 \midrule
 \multicolumn{2}{l}{Uniform baseline}  & 97.9\% & 0.260 & 0.004 & $-0.010$ \\
-\multicolumn{2}{l}{Marginal baseline} & 2.9\%  & 0.019 & 0.229 & 0.117 \\
+\multicolumn{2}{l}{Marginal baseline} & 4.0\%  & 0.021 & 0.229 & 0.117 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+Figure~\ref{fig:mare} visualizes the MARE across all conditions and baselines with bootstrap confidence intervals, making the ablation pattern visually explicit: the \emph{priors} condition consistently achieves the lowest MARE for every model, while the marginal baseline (which is handed the correct marginals) achieves the lowest overall.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/mare_comparison.png}
+\caption{Income fidelity (MARE) across prompt conditions and baselines, with 95\% bootstrap confidence intervals. The dashed line marks the 10\% threshold.}
+\label{fig:mare}
+\end{figure}
 
 \subsection{Internal Consistency}
 
 Table~\ref{tab:consistency} reports internal consistency metrics for the priors condition.
 All models achieve near-perfect consistency on the employment--hours dimension: every employed record has positive hours and every non-employed record has zero hours.
 The weakest consistency dimension is $P(\text{income}=0 \mid \text{not employed})$, where Solar Pro 4 achieves 100\% and DeepSeek V4 Flash only 36.2\%, indicating that DeepSeek frequently assigns nonzero income to non-employed records.
+Figure~\ref{fig:consistency} shows this pattern across all prompt conditions, confirming that the employment--hours--income consistency is robust to the prompt while the income-zero-for-unemployed constraint is the most fragile.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/consistency_heatmap.png}
+\caption{Internal consistency across prompt conditions and baselines. The employment--hours--income dimensions are near-perfect; the income-zero-for-unemployed constraint is the weakest, especially for DeepSeek.}
+\label{fig:consistency}
+\end{figure}
 
 \begin{table}[htbp]
 \centering
@@ -501,7 +531,7 @@ The most severe and consistent distortion is in the unemployment-by-education ma
 \caption{Unemployment by education: synthetic (priors) vs.\ BLS reference. The models dramatically overstate unemployment for lower education levels.}
 \label{fig:unemp}
 \end{figure}
-Table~\ref{tab:unemployment} shows that all models dramatically overstate unemployment for lower education levels, with MAREs ranging from 3.6$\times$ to 8.3$\times$ the reference values.
+Table~\ref{tab:unemployment} shows that all models dramatically overstate unemployment for lower education levels, with MAREs ranging from 3.4$\times$ to 7.8$\times$ the reference values.
 Notably, the \emph{priors} condition does not reliably improve---and sometimes worsens---this distortion, suggesting that the models lack accurate latent knowledge of population-level unemployment rates.
 
 \begin{table}[htbp]
@@ -519,7 +549,7 @@ Bachelor's    & 2.5 & 13.3 & 38.8 & 12.6 & 11.6 \\
 Master's      & 2.2 & 10.1 & 34.6 & 5.0  & 13.3 \\
 PhD           & 1.2 & 9.1  & 28.7 & 2.4  & 21.5 \\
 \midrule
-\textbf{MARE}     & --- & 5.7$\times$ & 14.6$\times$ & 3.6$\times$ & 8.3$\times$ \\
+\textbf{MARE}     & --- & 5.5$\times$ & 14.3$\times$ & 3.4$\times$ & 7.8$\times$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -554,7 +584,7 @@ Solar vs.\ DeepSeek   & 0.0082 & 0.020 \\
 \subsection{Seed Stability and Reproducibility}
 
 Table~\ref{tab:stability} reports the coefficient of variation (CV) of key metrics across two random seeds.
-The Mincer $R^2$ is remarkably stable: CV $< 3.5\%$ for all (model, condition) pairs, with most below 2\%.
+The Mincer $R^2$ is remarkably stable: CV $< 3.4\%$ for all (model, condition) pairs, with most below 2\%.
 MARE shows more variation (CV up to 12.6\% for Solar Pro 4/priors), but this reflects the inherently higher variance of quantile-based metrics on small samples rather than instability in the generation process.
 The return to education ($\hat{\beta}_1$) is also stable, with CV $< 4\%$ across all conditions.
 Figure~\ref{fig:stability} visualizes this stability, confirming that the econometric utility of the synthetic data is not an artifact of a particular random seed.
@@ -643,8 +673,8 @@ Marginal baseline & \$62{,}640 & \$60{,}776 & 3.0\%  & 827 & 907 \\
 \subsection{Interpretation}
 
 The central finding is a sharp asymmetry: small LLMs reproduce \emph{conditional} economic structure with high fidelity while distorting \emph{unconditional} marginals.
-The education--income gradient, the employment--hours--income consistency, and the concave age--earnings profile are all captured well, as evidenced by MAREs of 4.7--11.6\% and Mincer $R^2$ values of 0.86--0.90.
-Yet the models overstate the employment rate (62--83\% vs.\ 63\%), overstate advanced degrees (PhD 8.8--11.8\% vs.\ 3.3\%), and dramatically distort unemployment rates.
+The education--income gradient, the employment--hours--income consistency, and the concave age--earnings profile are all captured well, as evidenced by MAREs of 5.1--11.6\% and Mincer $R^2$ values of 0.87--0.90.
+Yet the models overstate the employment rate (62--83\% vs.\ 63\%), overstate advanced degrees (PhD 9.5--11.8\% vs.\ 3.3\%), and dramatically distort unemployment rates.
 
 This pattern is consistent with the models' prior knowledge being \emph{relational} rather than \emph{population-level}: they know that more education implies more income and that employed people work, but they do not encode the base rates of employment or degree attainment in the adult population.
 The cross-model JSD analysis (Table~\ref{tab:jsd}) reinforces this: all four models converge on very similar education distributions (JSD $< 0.009$) yet diverge on income (JSD 0.02--0.05), suggesting that the education--income mapping is the primary axis of latent knowledge, while the absolute income levels are harder to calibrate.
@@ -659,7 +689,7 @@ Unconditional marginals, by contrast, are \emph{population-level} facts---the fr
 A model asked to generate ``a realistic US population'' therefore defaults to a stylized, idealized population in which educational attainment and employment are higher than in the actual CPS, because the qualitative priors it has absorbed describe a more educated, more employed population than the real one.
 
 This interpretation is consistent with the specific failure modes we observe.
-The models over-represent advanced degrees (PhD 8.8--11.8\% vs.\ 3.3\%)---consistent with a training corpus that discusses PhD holders far more than their 3.3\% population share would warrant.
+The models over-represent advanced degrees (PhD 9.5--11.8\% vs.\ 3.3\%)---consistent with a training corpus that discusses PhD holders far more than their 3.3\% population share would warrant.
 They overstate the employment rate (62--83\% vs.\ 63\%)---consistent with a corpus that describes people in terms of their jobs.
 And they dramatically overstate unemployment for lower education levels---consistent with a conflation of the \emph{unemployment rate} (a conditional statistic among labor-force participants) with the \emph{non-employment rate} (a population-level statistic that includes retirees, students, and homemakers).
 The models appear to encode the qualitative direction of these relationships without the quantitative base rates, which is precisely the boundary our ablation and calibration analyses identify.
@@ -667,7 +697,7 @@ The models appear to encode the qualitative direction of these relationships wit
 \subsection{What the Baselines Reveal}
 
 The comparison with non-LLM baselines sharpens the interpretation.
-The \emph{marginal} baseline, which is handed the correct marginals, trivially beats the LLMs on MARE (2.9\% vs.\ 4.7--11.6\%) and TVD (0.02 vs.\ 0.11--0.19)---but it fails to capture any joint structure, fitting a Mincer regression with only $R^2=0.23$.
+The \emph{marginal} baseline, which is handed the correct marginals, trivially beats the LLMs on MARE (4.0\% vs.\ 5.1--11.6\%) and TVD (0.02 vs.\ 0.10--0.19)---but it fails to capture any joint structure, fitting a Mincer regression with only $R^2=0.23$.
 The LLMs, despite their distorted marginals, capture the joint structure that matters for econometric utility ($R^2 \geq 0.86$).
 This suggests a complementary division of labor: a cheap LLM can supply the \emph{conditional} structure, while a lightweight post-processing step that reweights or resamples records to match known population marginals could supply the \emph{unconditional} marginals.
 This hybrid---LLM-generated joint structure plus marginal calibration---is a promising and inexpensive direction for future work.
@@ -675,19 +705,19 @@ Section~\ref{sec:calibration} demonstrates that this hybrid works in practice: p
 
 \subsection{Prompt Ablation Implications}
 
-The ablation results (Table~\ref{tab:ablation}) have a practical implication for practitioners: providing explicit economic priors in the prompt substantially improves income fidelity (MARE reduction of 40--53\%) but has negligible effect on the downstream econometric $R^2$ ($< 0.04$ change).
+The ablation results (Table~\ref{tab:ablation}) have a practical implication for practitioners: providing explicit economic priors in the prompt substantially improves income fidelity (MARE reduction of 36--77\%) but has negligible effect on the downstream econometric $R^2$ ($< 0.04$ change).
 This means that for applications where only the joint structure matters (e.g., prototyping econometric pipelines, stress-testing regression specifications), the \emph{minimal} condition---with no economic knowledge in the prompt---may suffice, further reducing the barrier to entry.
 For applications where marginal fidelity matters (e.g., policy simulation), the \emph{priors} condition combined with post-hoc marginal calibration is the recommended approach.
 
 \subsection{Reproducibility}
 
-The cross-seed analysis (Table~\ref{tab:stability}) provides important reassurance: the Mincer $R^2$ is stable across seeds (CV $< 3.5\%$), indicating that the econometric utility of the synthetic data is not an artifact of a particular random seed.
+The cross-seed analysis (Table~\ref{tab:stability}) provides important reassurance: the Mincer $R^2$ is stable across seeds (CV $< 3.4\%$), indicating that the econometric utility of the synthetic data is not an artifact of a particular random seed.
 This stability is notable given the small sample size (800 records per model per condition) and suggests that the generation process converges on consistent conditional structure.
 The higher CV for MARE (up to 12.6\%) reflects the inherent sensitivity of quantile-based metrics to sampling variability in small samples, rather than instability in the generation process itself.
 
 \subsection{Model-Specific Observations}
 
-Solar Pro 4 stands out for achieving the lowest MARE (4.7\%) and highest internal consistency (100\% on all four consistency metrics), suggesting that it may be particularly well-suited for applications requiring both fidelity and logical coherence.
+Solar Pro 4 stands out for achieving the lowest MARE (5.1\%) and highest internal consistency (100\% on all four consistency metrics), suggesting that it may be particularly well-suited for applications requiring both fidelity and logical coherence.
 DeepSeek V4 Flash uniquely achieves an employment rate close to the reference (61.6\% vs.\ 63\%), but at the cost of poor internal consistency ($P(\text{income}=0 \mid \text{not employed}) = 36.2\%$) and the highest MARE (11.6\%).
 Qwen 3.7 Flash achieves the highest Mincer $R^2$ (0.900) with the highest number of employed records ($n=661$), making it the best choice for econometric utility.
 Ling 3.0 Flash occupies a middle ground across all metrics.
@@ -748,7 +778,7 @@ Second, our ground truth is aggregated public statistics rather than the full CP
 Third, our privacy assessment is indirect (diversity as a proxy); a formal membership-inference evaluation against real CPS records is out of scope.
 Fourth, the prompt encodes economic priors explicitly, so the results reflect the models' ability to follow instructions as much as their latent knowledge; the ablation in Section~\ref{sec:results:ablation} partially addresses this.
 Fifth, our sample of 800 records per model is modest; while bootstrap CIs quantify sampling uncertainty, larger samples would tighten the estimates.
-Sixth, all models exhibit the ``PhD overrepresentation'' bias---generating 8.8--11.8\% PhD holders versus the 3.3\% Census figure---which may reflect training data composition or a systematic tendency to overrepresent highly educated individuals.
+Sixth, all models exhibit the ``PhD overrepresentation'' bias---generating 9.5--11.8\% PhD holders versus the 3.3\% Census figure---which may reflect training data composition or a systematic tendency to overrepresent highly educated individuals.
 Seventh, the gender pay gap is systematically underestimated (0--9\% vs.\ 16\% reference), suggesting that the models lack accurate knowledge of demographic disparities in income---a limitation that must be acknowledged when using synthetic data for equity-related research.
 
 \subsection{Threats to Validity}
@@ -812,11 +842,11 @@ We further recommend that synthetic data be labeled as such and never be present
 \label{sec:conclusion}
 
 We asked whether small, low-cost language models can generate research-grade synthetic economic microdata from a prompt alone.
-Our answer is nuanced: four small models---Ling 3.0 Flash, DeepSeek V4 Flash, Solar Pro 4, and Qwen 3.7 Flash, each under \$0.03---reproduce the conditional economic structure of the CPS---education--income gradients, employment--hours--income consistency, and Mincer earnings profiles with $R^2 = 0.86$--0.90---with high fidelity, but systematically distort unconditional marginals such as the employment rate, the education distribution, and especially the unemployment-by-education rates.
-A three-condition prompt ablation reveals that explicit economic priors improve income fidelity (MARE reduction of 40--53\%) but have limited effect on econometric utility, indicating that the joint structure is largely latent.
-Cross-seed analysis demonstrates high reproducibility (CV $< 3.5\%$ for $R^2$), and cross-model JSD shows strong agreement on education distributions (JSD $< 0.009$).
+Our answer is nuanced: four small models---Ling 3.0 Flash, DeepSeek V4 Flash, Solar Pro 4, and Qwen 3.7 Flash, each under \$0.03---reproduce the conditional economic structure of the CPS---education--income gradients, employment--hours--income consistency, and Mincer earnings profiles with $R^2 = 0.87$--0.90---with high fidelity, but systematically distort unconditional marginals such as the employment rate, the education distribution, and especially the unemployment-by-education rates.
+A three-condition prompt ablation reveals that explicit economic priors improve income fidelity (MARE reduction of 36--77\%) but have limited effect on econometric utility, indicating that the joint structure is largely latent.
+Cross-seed analysis demonstrates high reproducibility (CV $< 3.4\%$ for $R^2$), and cross-model JSD shows strong agreement on education distributions (JSD $< 0.009$).
 Compared with non-LLM baselines, the LLMs' unique value is their joint structure, not their marginals.
-Crucially, we demonstrate that the recommended remedy works: post-stratifying the synthetic records to match the public education distribution drives the education-distribution TVD to zero while preserving the Mincer $R^2$ (within $\pm 0.02$), validating the generate--validate--calibrate--verify recipe end to end.
+Crucially, we demonstrate that the recommended remedy works: post-stratifying the synthetic records to match the public education distribution drives the education-distribution TVD to zero while preserving the Mincer $R^2$ (within $\pm 0.03$), validating the generate--validate--calibrate--verify recipe end to end.
 Small LLMs are therefore promising as cheap zero-shot generators of structurally coherent microdata, and a lightweight, fully public calibration step renders them fit for research use at a total cost of under \$0.10.
 Future work should extend the evaluation to larger models, incorporate marginal reweighting as a default post-processing step, conduct formal privacy audits against real microdata, and investigate whether few-shot prompting or retrieval-augmented generation can improve the accuracy of unconditional marginals without sacrificing the models' latent conditional knowledge.
 
@@ -870,7 +900,7 @@ All prompts are reproduced verbatim in the accompanying code repository.
 \subsection{Wasserstein-1 Distance}
 
 Table~\ref{tab:wasserstein} reports the Wasserstein-1 (earth-mover) distance between synthetic and reference income distributions, normalized by the reference median income.
-Values range from 0.149 (DeepSeek) to 0.209 (Solar Pro 4), indicating that the synthetic distributions are shifted by 15--21\% of the reference median.
+Values range from 0.149 (DeepSeek) to 0.211 (Solar Pro 4), indicating that the synthetic distributions are shifted by 15--21\% of the reference median.
 
 \begin{table}[htbp]
 \centering
@@ -884,7 +914,7 @@ Values range from 0.149 (DeepSeek) to 0.209 (Solar Pro 4), indicating that the s
 Ling 3.0 Flash    & \$11{,}806 & 0.193 \\
 DeepSeek V4 Flash & \$9{,}160  & 0.149 \\
 Qwen 3.7 Flash    & \$9{,}513  & 0.157 \\
-Solar Pro 4       & \$12{,}823 & 0.209 \\
+Solar Pro 4       & \$12{,}866 & 0.211 \\
 \bottomrule
 \end{tabular}
 \end{table}

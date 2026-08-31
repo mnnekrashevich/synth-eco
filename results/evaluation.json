@@ -38,12 +38,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 9.2048,
-        "some_college": 2.3879,
+        "some_college": 1.9421,
         "bachelors": 3.016,
         "masters": 3.6909,
         "phd": 2.7917
       },
-      "unemployment_mare": 4.2183,
+      "unemployment_mare": 4.1291,
       "age_mean": 44.29,
       "age_std": 15.23,
       "age_ks_stat": 0.1934,
@@ -113,12 +113,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 9.1714,
-        "some_college": 4.8061,
+        "some_college": 4.0421,
         "bachelors": 4.332,
         "masters": 3.5818,
         "phd": 6.575
       },
-      "unemployment_mare": 5.6933,
+      "unemployment_mare": 5.5405,
       "age_mean": 44.48,
       "age_std": 15.36,
       "age_ks_stat": 0.1934,
@@ -188,12 +188,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 12.2286,
-        "some_college": 4.6576,
+        "some_college": 3.9132,
         "bachelors": 5.264,
         "masters": 7.3273,
         "phd": 4.5583
       },
-      "unemployment_mare": 6.8072,
+      "unemployment_mare": 6.6583,
       "age_mean": 44.24,
       "age_std": 15.89,
       "age_ks_stat": 0.187,
@@ -263,12 +263,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 8.869,
-        "some_college": 1.7182,
+        "some_college": 1.3605,
         "bachelors": 5.368,
         "masters": 5.5455,
         "phd": 1.0
       },
-      "unemployment_mare": 4.5001,
+      "unemployment_mare": 4.4286,
       "age_mean": 42.86,
       "age_std": 15.87,
       "age_ks_stat": 0.2113,
@@ -338,12 +338,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 6.7214,
-        "some_college": 5.0606,
+        "some_college": 4.2632,
         "bachelors": 4.024,
         "masters": 1.2545,
         "phd": 0.9583
       },
-      "unemployment_mare": 3.6038,
+      "unemployment_mare": 3.4443,
       "age_mean": 41.99,
       "age_std": 15.88,
       "age_ks_stat": 0.2228,
@@ -413,12 +413,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 10.1643,
-        "some_college": 5.0606,
+        "some_college": 4.2632,
         "bachelors": 6.244,
         "masters": 2.2727,
         "phd": 11.9
       },
-      "unemployment_mare": 7.1283,
+      "unemployment_mare": 6.9688,
       "age_mean": 43.1,
       "age_std": 16.93,
       "age_ks_stat": 0.1925,
@@ -488,12 +488,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 9.2619,
-        "some_college": 4.2,
+        "some_college": 3.5158,
         "bachelors": 0.676,
         "masters": 4.55,
         "phd": 16.3167
       },
-      "unemployment_mare": 7.0009,
+      "unemployment_mare": 6.8641,
       "age_mean": 42.55,
       "age_std": 16.82,
       "age_ks_stat": 0.2178,
@@ -563,12 +563,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 10.8571,
-        "some_college": 4.5273,
+        "some_college": 3.8,
         "bachelors": 2.892,
         "masters": 3.8455,
         "phd": 17.6417
       },
-      "unemployment_mare": 7.9527,
+      "unemployment_mare": 7.8073,
       "age_mean": 42.4,
       "age_std": 16.17,
       "age_ks_stat": 0.2328,
@@ -638,12 +638,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 13.9952,
-        "some_college": 8.0152,
+        "some_college": 6.8289,
         "bachelors": 5.208,
         "masters": 5.2,
         "phd": 26.3833
       },
-      "unemployment_mare": 11.7603,
+      "unemployment_mare": 11.5231,
       "age_mean": 43.94,
       "age_std": 17.3,
       "age_ks_stat": 0.189,
@@ -713,12 +713,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 6.5262,
-        "some_college": 5.197,
+        "some_college": 4.3816,
         "bachelors": 5.152,
         "masters": 2.45,
         "phd": 0.175
       },
-      "unemployment_mare": 3.9,
+      "unemployment_mare": 3.737,
       "age_mean": 41.52,
       "age_std": 14.38,
       "age_ks_stat": 0.258,
@@ -788,12 +788,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 10.1619,
-        "some_college": 10.6939,
+        "some_college": 9.1553,
         "bachelors": 14.504,
         "masters": 14.7455,
         "phd": 22.9333
       },
-      "unemployment_mare": 14.6077,
+      "unemployment_mare": 14.3,
       "age_mean": 41.44,
       "age_std": 13.33,
       "age_ks_stat": 0.2759,
@@ -863,12 +863,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 7.1024,
-        "some_college": 5.197,
+        "some_college": 4.3816,
         "bachelors": 5.272,
         "masters": 2.7455,
         "phd": 0.125
       },
-      "unemployment_mare": 4.0884,
+      "unemployment_mare": 3.9253,
       "age_mean": 40.58,
       "age_std": 13.81,
       "age_ks_stat": 0.269,
@@ -940,12 +940,12 @@
       },
       "unemployment_rel_error": {
         "high_school": 10.5286,
-        "some_college": 14.4818,
+        "some_college": 12.4447,
         "bachelors": 20.116,
         "masters": 20.3455,
         "phd": 39.6333
       },
-      "unemployment_mare": 21.021,
+      "unemployment_mare": 20.6136,
       "age_mean": 52.02,
       "age_std": 19.82,
       "age_ks_stat": 0.029,
@@ -980,65 +980,65 @@
     "marginal": {
       "n_records": 1800,
       "education_distribution": {
-        "high_school": 0.3517,
-        "some_college": 0.2733,
-        "bachelors": 0.235,
-        "masters": 0.1078,
-        "phd": 0.0322
+        "high_school": 0.3533,
+        "some_college": 0.2728,
+        "bachelors": 0.2328,
+        "masters": 0.1061,
+        "phd": 0.035
       },
-      "education_tvd": 0.0193,
+      "education_tvd": 0.0208,
       "median_income_by_education": {
-        "high_school": 50344.0,
-        "some_college": 53540.0,
-        "bachelors": 80492.0,
-        "masters": 100641.0,
-        "phd": 122874.5
+        "high_school": 50693.0,
+        "some_college": 53599.5,
+        "bachelors": 79495.0,
+        "masters": 105999.0,
+        "phd": 121256.0
       },
       "median_income_rel_error": {
-        "high_school": 0.041,
-        "some_college": 0.0094,
-        "bachelors": 0.0032,
-        "masters": 0.0518,
-        "phd": 0.0373
+        "high_school": 0.0482,
+        "some_college": 0.0105,
+        "bachelors": 0.0092,
+        "masters": 0.1078,
+        "phd": 0.0236
       },
-      "median_income_mare": 0.0285,
+      "median_income_mare": 0.0399,
       "gender_split": {
-        "male": 0.4922,
-        "female": 0.5078
+        "male": 0.4944,
+        "female": 0.5056
       },
       "unemployment_by_education": {
-        "high_school": 0.0458,
-        "some_college": 0.0203,
-        "bachelors": 0.026,
+        "high_school": 0.0472,
+        "some_college": 0.0305,
+        "bachelors": 0.0263,
         "masters": 0.0052,
         "phd": 0.0
       },
       "unemployment_rel_error": {
-        "high_school": 0.0905,
-        "some_college": 0.3848,
-        "bachelors": 0.04,
+        "high_school": 0.1238,
+        "some_college": 0.1974,
+        "bachelors": 0.052,
         "masters": 0.7636,
         "phd": 1.0
       },
-      "unemployment_mare": 0.4558,
-      "age_mean": 50.73,
-      "age_std": 19.54,
-      "age_ks_stat": 0.0323,
-      "age_ks_pvalue": 0.045603,
-      "income_ks_stat": 0.0224,
-      "income_ks_pvalue": 0.337929,
+      "unemployment_mare": 0.4274,
+      "age_mean": 50.62,
+      "age_std": 19.43,
+      "age_ks_stat": 0.0362,
+      "age_ks_pvalue": 0.017423,
+      "income_ks_stat": 0.0236,
+      "income_ks_pvalue": 0.280705,
       "mincer": {
-        "n_employed": 1749,
-        "intercept": 9.3432,
-        "return_to_education": 0.1167,
-        "return_se": 0.0052,
-        "experience": 0.0023,
-        "experience_sq": -3.6e-05,
-        "r_squared": 0.2288
+        "n_employed": 1743,
+        "intercept": 9.3565,
+        "return_to_education": 0.1154,
+        "return_se": 0.0051,
+        "experience": 0.0032,
+        "experience_sq": -4.9e-05,
+        "r_squared": 0.2287
       },
-      "mincer_return_vs_canonical": 0.2967,
-      "employment_rate": 0.9717,
-      "employment_rate_rel_error": 0.5423,
+      "mincer_return_vs_canonical": 0.2822,
+      "employment_rate": 0.9683,
+      "employment_rate_rel_error": 0.537,
       "consistency_hours_positive_given_employed": 1.0,
       "consistency_hours_zero_given_unemployed": 1.0,
       "consistency_income_positive_given_employed": 1.0,
@@ -1047,8 +1047,8 @@
       "unique_records_ratio": 1.0,
       "entropy": {
         "gender": 0.693,
-        "education": 1.413,
-        "marital_status": 1.093,
+        "education": 1.417,
+        "marital_status": 1.096,
         "state": 3.903
       }
     }
@@ -1342,24 +1342,24 @@
     },
     "baseline_marginal": {
       "mare": [
-        0.0195,
-        0.0521,
-        0.1116
+        0.0224,
+        0.0576,
+        0.1111
       ],
       "tvd": [
-        0.0093,
-        0.026,
-        0.0463
+        0.0102,
+        0.0263,
+        0.0447
       ],
       "mincer_r2": [
-        0.1963,
-        0.2293,
-        0.2617
+        0.1959,
+        0.2284,
+        0.2606
       ],
       "mincer_beta1": [
-        0.1065,
-        0.1166,
-        0.1261
+        0.1051,
+        0.1151,
+        0.1255
       ]
     }
   }
